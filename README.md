@@ -1,6 +1,6 @@
 # Photography Edition
 
-Photography Edition is a social network website for photographers. It is developed using the MVC architecture. To develop and deploy this website we used CodeIgniter as the framework.
+Photography Edition is a social network for photographers. It is developed using the MVC architecture. To develop and deploy this website we used CodeIgniter as the framework.
 
 ## Features!
 
