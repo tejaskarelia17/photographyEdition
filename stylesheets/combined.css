@@ -31,11 +31,11 @@ a:hover, a:active, a:focus {text-decoration:underline; color:#038fd9;}
 .skiptocontent, .relbookmark, .profileSelector label, .gallerySelector label, .basket .field label {position:absolute; margin-left: -9999px;}
 #contentCol ul, #content ol { padding:0px 0px 20px 0px;}
 #sideCol .content ul, #sideCol .content ol { padding-bottom:10px;}
-#contentCol li, #sideCol .content li { padding:0px 0px 5px 13px; background:url('/_images/bullets/square.gif') no-repeat 2px 8px;}
+#contentCol li, #sideCol .content li { padding:0px 0px 5px 13px; background:url('/assets/images/gallery/blackBullet.jpg') no-repeat 2px 8px;}
 #contentCol li ul, #sideCol .content li ul { padding-top:5px;}
 #content ol li, #sideCol .content ol li { padding:0px 0px 5px 0px; margin:0px 0px 0px 25px; list-style:decimal outside; background:none;}
 #contentCol table { float:left; width:100%; margin:0 0 15px 0; text-align:left; border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-top:1px solid #e1e1e1;}
-#contentCol table th { font-weight:bold; color:#fff; background:url(/_images/bg/table-th.gif) top left repeat-x #4d4d4d; border-top:1px solid #454545; padding:7px 8px; }
+#contentCol table th { font-weight:bold; color:#fff; background: #4d4d4d; border-top:1px solid #454545; padding:7px 8px; }
 #contentCol table td { border-bottom:1px solid #e1e1e1; background:#fff; padding:5px 8px; vertical-align:middle;}
 	#contentCol table .even td { background:#F9F9F9;}
 	#contentCol table .highlight td { background:#fffee9;}
@@ -43,7 +43,7 @@ a:hover, a:active, a:focus {text-decoration:underline; color:#038fd9;}
 legend, .ui-dialog .hide, .hidden, .alert.hidden { display:none;}
 input, select, textarea { font-size:11px; font-family:Arial, Verdana, sans-serif;}
 .checkbox input, .rememberMe input { margin:0; width:13px; height:13px; overflow:hidden; padding:0;}
-.hr { background:url(/_images/bg/profile-grad.png) top left repeat-x; border-top:1px solid #E7E7E7; height:30px;}
+.hr { border-top:1px solid #E7E7E7; height:30px;}
 	.hr hr { display:none;}
 
 /********************************************************************/
@@ -57,7 +57,7 @@ h1 { font-size:18px; color:#4c4c4c; padding:0px 0px 15px 0px; line-height:1.4em;
 	h1 .cufon-vml { margin-bottom:5px !important;}
 	.cufon-ready .heading h1 { padding:0 0 10px 0; line-height:1em;}
 	
-#content .heading { background:url(/_images/bg/heading.png) top right no-repeat #2c2c2c; border-color:#494949;}	
+#content .heading { background: #2c2c2c; border-color:#494949;}
 	#content .heading .hd { background:none;}
 		#content .heading h1 { color:#fff; }
 
@@ -70,7 +70,7 @@ h3 { font-size: 14px; color:#4c4c4c; font-weight:normal; padding:0px 0px 10px 0p
 /*                          Template tags                           */
 /********************************************************************/
 
-#container { background:url(/_images/bg/bkg.gif) 0px -92px repeat-x #fff;}
+#container { background:#fff;}
 	#containerInner {width:984px; margin:0 auto;}
 		#containerInner.noBreadcrumb { padding-top:24px;}
 
@@ -81,9 +81,9 @@ h3 { font-size: 14px; color:#4c4c4c; font-weight:normal; padding:0px 0px 10px 0p
 #header { background:#000; height:89px; border-bottom:3px solid #000;}
 	#headerInner { width:984px; margin:0 auto; z-index:1001; position:relative;}
 	#header .headerContent { float:right;}
-	#logo { text-indent:-9999px; width:107px; height:66px; background:url(/_images/logos/logo.png) no-repeat; float:left; margin:34px 0 0 8px;}
+	#logo { text-indent:-9999px; width:107px; height:66px; background:url(/images/logo.png) no-repeat; float:left; margin:34px 0 0 8px;}
 	
-	#beta { height:9px; width:27px; background:url(/_images/icons/beta.gif) 0px 0px no-repeat; text-indent:-9999px; position:absolute; top:17px; left:120px;}
+	#beta { height:9px; width:27px; text-indent:-9999px; position:absolute; top:17px; left:120px;}
 	
 	#siteLogos { float:left; width:120px;}
 	    #sony { float:left; border-top:1px solid #595959; padding:4px 0 0 0; margin:8px 0 0 9px;}
@@ -97,7 +97,7 @@ h3 { font-size: 14px; color:#4c4c4c; font-weight:normal; padding:0px 0px 10px 0p
     .memberType .inner { margin: 0 auto; position: relative; width: 984px; z-index: 1000;}
     .memberType .inner img { float:left;}	
     
-    #collectionAccount .memberType { background-image:url(/_images/collection-site/banner/memberTypes/photographer/bkg.png);}
+    #collectionAccount .memberType { background-color: #FFF2CC;}
     
 /********************************************************************/
 /*                            HeaderLinks                           */
@@ -144,19 +144,19 @@ h3 { font-size: 14px; color:#4c4c4c; font-weight:normal; padding:0px 0px 10px 0p
 	#headerLinks .dropDownContent .close { position:absolute; bottom:5px; left:10px; padding:0 0 0 16px; background:url(/_images/bullets/close.gif) 0 5px no-repeat; border:none;}
 		#headerLinks .dropDownContent a:hover.close, #headerLinks .dropDownContent a:active.close, #headerLinks .dropDownContent a:focus.close { background:url(/_images/bullets/close.gif) 0 5px no-repeat; text-decoration:underline;}
 		
-#headerLinks li.search a { padding-left:20px; background:url(/_images/bg/search.png) 0px 0px #494949 no-repeat; }
+#headerLinks li.search a { padding-left:20px; background:url(/images/search.png) 0px 0px #494949 no-repeat; }
 
 /***** Share Feature *****/
 
-#headerLinks li.share a { padding-left:22px; background:url(/_images/bg/util-bar.png) 0px -270px #494949 no-repeat; }
+#headerLinks li.share a { padding-left:22px; background:url(/images/bg_util-bar.png) 0px -270px #494949 no-repeat; }
 	#headerLinks li.share .dropDownContent { width:150px;}
 		#headerLinks li .addthis_toolbox a, #headerLinks li.account .dropDownContent a, #headerLinks li.language .dropDownContent a { float:none; display:block; line-height:32px; border:none; padding:5px 10px; cursor:pointer; background:none;}
 			#headerLinks li .addthis_toolbox a img, #headerLinks li.account .dropDownContent a img { vertical-align:middle; margin:0 5px 0 0;}
 			
 /***** Account Dropdown *****/
 			
-#headerLinks li.account a { padding-left:22px; background:url(/_images/bg/util-bar.png) 0px 0px #038fd9 no-repeat; }
-#headerLinks li.memberLoginButton a { padding-left:22px; background:url(/_images/bg/util-bar.png) 0px -72px #494949  no-repeat; }
+#headerLinks li.account a { padding-left:22px; background:url(/images/bg_control_nav.png) 0px 0px #038fd9 no-repeat; }
+#headerLinks li.memberLoginButton a { padding-left:22px; background:url(/images/bg_control_nav.png) 0px -72px #494949  no-repeat; }
     #headerLinks li.account a:hover, #headerLinks li.account a:active, #headerLinks li.account a:focus { background-color:#0aa3f4; color:#fff;}
     #headerLinks li.openDropDown.account.highlight > a { border-bottom:3px solid #038fd9;}
 	
