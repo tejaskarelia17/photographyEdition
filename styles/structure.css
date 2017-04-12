@@ -1,0 +1,88 @@
+/*[IPE] CSS: Structure*/
+
+/*Reset CSS
+--------------------------------------*/
+body{padding:0;margin:0;}
+h1,h2,h3,h4,h5,h6,ul,li,em,strong,pre,code{padding:0;margin:0;line-height:1em;font-weight:normal;font-style: normal;}
+table{font-size:inherit;}
+ul{list-style:none;}
+img{border:0;}
+p{margin:0;padding:0;}
+
+/*Fonts Generator*/
+@font-face{
+	font-family: 'kReg'; 
+	src:url('fonts/klavika-regular-webfont.eot'); 
+	src:url('fonts/klavika-regular-webfont.eot?#iefix') format('embedded-opentype'), 
+		url('fonts/klavika-regular-webfont.woff') format('woff'), 
+		url('fonts/klavika-regular-webfont.ttf') format('truetype'), 
+		url('fonts/klavika-regular-webfont.svg#webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+	font-family: 'kBold'; 
+	src:url('fonts/klavika-bold-webfont.eot'); 
+	src:url('fonts/klavika-bold-webfont.eot?#iefix') format('embedded-opentype'), 
+		url('fonts/klavika-bold-webfont.woff') format('woff'), 
+		url('fonts/klavika-bold-webfont.ttf') format('truetype'), 
+		url('fonts/klavika-bold-webfont.svg#webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{ 
+	font-family: 'kMed'; 
+	src:url('fonts/klavika-medium-webfont.eot'); 
+	src:url('fonts/klavika-medium-webfont.eot?#iefix') format('embedded-opentype'), 
+		url('fonts/klavika-medium-webfont.woff') format('woff'), 
+		url('fonts/klavika-medium-webfont.ttf') format('truetype'), 
+		url('fonts/klavika-medium-webfont.svg#webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Font Adjustment & Body Background
+---------------------------------------*/
+body{
+	font-size: 62.5%;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+/* Generic styles
+---------------------------------------*/
+img{border:none;}
+.no-wrap{ white-space: nowrap; }
+a{text-decoration: none; color:#000000; line-height:1.2em;}
+a:hover{text-decoration:none;}
+a img, a:focus, fieldset{ border: none;}
+strong { font-weight: bold;}
+p{font-size:1.2em; color:#424242;}
+.floatLeft{float:left;}
+.floatRight{float:right;}
+a:active{outline:none;}
+a:focus{-moz-outline-style:none;}
+.dispNone, footNone{display:none;}
+.dispBlock, footBlock{display:block;}
+.upperCase{text-transform:uppercase;}
+a.back, a.next{background:url(../assets/images/spritesIPE.png) no-repeat;width:14px;height:19px;float:left;margin-top:15px;}
+a.back{background-position:0 -189px;margin-right:10px;}
+a.next{background-position:0 -209px;}
+
+/* Header Tags Styles
+---------------------------------------*/
+h1,h2,h3,h4,p {line-height:1.2em;}
+
+/* Layout
+---------------------------------------*/
+div#pageWrapper, div#contentContainer {
+	width: 1280px;
+	padding: 0;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+img.logo{float:left;}
+a.home{background:url(../assets/images/spritesIPE.png) no-repeat;width:39px;height:46px;float:left;text-indent:-9999px;}
+a.dropLets{background:url(../assets/images/spritesIPE.png) 0 -48px no-repeat;width:41px;height:45px;text-indent:-9999px;float:left;}

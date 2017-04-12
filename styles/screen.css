@@ -1,0 +1,493 @@
+/* ---------------------------
+Author: IT-Serve Web Design, Fife
+Author URL: http://www.itserve.co.uk
+Website: http://www.rorywemyss.com
+Version: 1.0
+------------------------------ */
+
+/* COLOURS
+	black:				1a1a1a {nav}
+	grey:				707070 (p)
+	dark grey:			373737 (subnav, h1)
+	light grey:			9b9b9b (footer p, footer a)
+	teal:				84a287 (links, highlight)
+	dark teal:			435f33 {link hover}
+*/
+
+/* Reset default browser styles */
+
+#wrap {
+	background: #fff;
+	width: 100%;
+	}
+
+#header {
+	margin: 50px auto 30px auto;
+	width: 940px;
+	height:76px;
+	}
+	
+	#logo {
+		background: #fff url(../img/logo.png) no-repeat 0 0;
+		float: left;
+		}
+		
+		#logo a {
+			display: block;
+			height: 81px;
+			text-indent: -999em;
+			width: 200px;
+			}
+			
+			#logo a:focus {overflow: hidden;}
+
+	#aperture {
+		z-index: 10;
+		margin: 0 0 0 -285px;
+		}
+	
+	#flashnav {float: right;}
+	 
+#nav {
+	position:fixed;
+	float: right;
+	margin-top: 13px;
+	}
+
+	#nav li {
+		font-family: "Futura Std", Futura, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		float: left;
+		font-size: 1.4em;
+		list-style: none;
+		}
+
+		#nav li a {
+			border: 0;
+			color: #1a171b;
+			font-weight: bold;
+			padding: 0.6em 0.8em;
+			text-decoration: none;
+			}
+			
+		#nav #n-links a{
+		padding: 0.6em 0 0.6em 0.8em;
+		}
+			
+		#nav li a:hover {color: #84a287;}
+		
+		#nav li a:focus {outline: 0;}
+
+#gallery-nav {
+	text-align: center;
+	margin: 0 auto;
+	width: 473px;
+	}
+
+	#gallery-nav li {
+		font-size: 1.6em;
+		font-family: "Futura Std", Futura, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: lighter;
+		list-style: none;
+		float: left;
+		}
+		
+		/* Dropdown Menu */
+		#gallery-nav li ul {
+			background: transparent url(../img/dropdown-bg.png) no-repeat 0 0;
+			width: 148px;
+			padding: 11px 0 4px 0;
+			margin: 0 0 0 -15px;
+			}
+			#gallery-nav #gn-commercial ul {margin: 0 0 0 0;}
+
+			#gallery-nav li ul li {
+				background: #fff url(../img/dropdown-underline.png) no-repeat center bottom;
+				margin: 0 0 0 4px;
+				width: 140px;
+				line-height: 1em;
+				}
+
+			#gallery-nav li ul #gn-family, 
+			#gallery-nav li ul #gn-street {background-image: none;}
+
+				#gallery-nav li li a {
+					color: #575757;
+					font-size: 0.3em;
+					padding: 0 0 0 0.5em;
+					text-align: left;
+					text-decoration: none;
+					}
+
+				#gallery-nav li li a:hover {
+					text-decoration: underline;
+					}
+					
+		#gallery-nav li a.root {
+			color: #373737;
+			display: block;
+			float: left;
+			background-color: #fff;
+			background-image: url(../img/gallery-nav.png);
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			text-indent: -999em;
+			text-decoration: none;
+			line-height: 26px;
+			margin: 0 0 20px 0;
+			}
+			
+			#gallery-nav #gn-potraiture a.root {background-position: 0 0; width: 110px;}
+			#gallery-nav #gn-commercial a.root {background-position: -110px 0; width: 150px;}
+			#gallery-nav #gn-weddings a.root {background-position: -260px 0; width: 125px;}
+			#gallery-nav #gn-wildlife a.root {background-position: -385px 0; width: 88px;}
+
+			#gallery-nav li a:hover {color: #84a287;}
+
+			#gallery-nav #gn-potraiture a.root:hover, #gallery-nav #gn-potraiture.sfHover a.root {background-position: 0 -60px !important;}
+			#gallery-nav #gn-commercial a.root:hover, #gallery-nav #gn-commercial.sfHover a.root {background-position: -110px -60px !important;}
+			#gallery-nav #gn-weddings a.root:hover, #gallery-nav #gn-weddings.sfHover a.root {background-position: -260px -60px !important;}
+			#gallery-nav #gn-wildlife a.root:hover, #gallery-nav #gn-wildlife.sfHover a.root {background-position: -385px -60px !important;}
+
+			#gallery-nav #gn-potraiture a.root:active, .portraiture-page #gallery-nav #gn-potraiture a.root {background-position: 0 -30px;}
+			#gallery-nav #gn-commercial a.root:active, .commercial-page #gallery-nav #gn-commercial a.root {background-position: -110px -30px;}
+			#gallery-nav #gn-weddings a.root:active, .weddings-page #gallery-nav #gn-weddings a.root {background-position: -260px -30px;}
+			#gallery-nav #gn-wildlife a.root:active, .wildlife-page #gallery-nav #gn-wildlife a.root {background-position: -385px -30px;}
+
+			#gallery-nav li a.root:focus {outline: none;}
+			
+			/* Subnav Dropdown On States */
+			#family-page #gallery-nav #gn-family a,
+			#fashion-page #gallery-nav #gn-fashion a,
+			#sport-page #gallery-nav #gn-sport a,
+			#street-page #gallery-nav #gn-street a {
+				background: transparent url(../img/dropdown-arrow.png) no-repeat 6px center;
+				color: #84a287;
+				text-indent: 10px;
+				}
+
+#introflash {
+	margin: 0 auto;
+	text-align:center;
+	}
+
+#content {
+	width: 620px;
+	margin: 0 auto;
+	}
+
+	#content .col-l {width: 360px;}
+
+	#content .col-r {width: 220px;}
+
+#footer {
+	background: #fff url(../img/top.png) repeat-x 0 0;
+	clear: both;
+	font-size: 0.9em;
+	margin: 40px 0 0 0;
+	width: 100%;
+	}
+
+	#footer-content {
+		padding: 20px 0;
+		margin: 0 auto;
+		width: 940px;
+		}
+
+		#footer p {
+			color: #9b9b9b;
+			float: left;
+			}
+	
+		#footer a {color: #9b9b9b;}
+	
+		#footer #logo-small {
+			float: right;
+			margin: 10px 0;
+			}
+			
+/* Parts
+------------------------------ */
+/* Contact Form */
+#contactform label {
+	display: block;
+	font-size: 1.3em;
+	line-height: 2em;
+	}
+
+#contactform input.text, #contactform textarea.text {
+	border: 1px solid #a8bcaa;
+	font-family: "Trebuchet MS", Trebuchet, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0.4em 0.2em;
+	margin: 0 0 0.5em 0;
+	width: 218px;
+	}
+	#contactform textarea.text {width: 338px; height: 108px;}
+	
+	
+	#contactform #contact-submit input, #contactform #contact-submit a {float: left;}
+	
+		#contactform .submit {
+			cursor: pointer;
+			margin: 0.5em 0 0 0;
+			width: 58px;
+			height: 29px;
+			}
+
+		#contactform .cancel {
+			background: #fff;
+			border: 0;
+			border-left: 1px solid #707070;
+			color: #84a287;
+			cursor: pointer;
+			font-size: 1.3em;
+			text-decoration: underline;
+			margin: 15px 0 0 0.5em;
+			padding: 0 0 0 0.55em;
+			line-height: 1em;
+			}
+			
+			#contactform .cancel:hover{color: #435f33;}
+
+/* Header Image Replacement */
+#h-about, #h-contact, #h-accreditation, #h-links, #h-connect {
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	text-indent: -999em;
+	}
+
+#h-about {background-image: url(../img/h-about.png); width: 103px; height: 26px;}
+#h-contact {background-image: url(../img/h-contact.png); width: 75px; height: 18px;}
+#h-accreditation {background-image: url(../img/h-accreditation.png); width: 122px; height: 20px;}
+#h-links {background-image: url(../img/h-links.png); width: 187px; height: 20px;}
+#h-connect {background-image: url(../img/h-connect.png); width: 122px; height: 18px; margin: 1.5em 0 0 0;}
+
+/* Social Links */
+#facebook a, #flickr a {
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	display: block;
+	text-indent: -999em;
+	margin: 1em 0 1em 0;
+	width: 95px;
+	height: 20px;
+	}
+	#facebook a {background-image: url(../img/facebook.png);}
+	#flickr a {background-image: url(../img/flickr.png);}
+	
+	#facebook a:focus, #flickr a:focus {overflow: hidden;}
+
+/* Link List/Accreditation List */
+.link-list li {
+	line-height: 2em;
+	list-style: square;
+	}
+	
+.accreditation-list li {
+	color: #373737;
+	line-height: 1.5em;
+	list-style: square;
+	margin: 1em 0;
+	}
+
+/* Superfish */
+.sf-menu ul {
+	position: absolute;
+	top: -999em;
+	width: 148px; /* left offset of submenus need to match (see below) */
+}
+.sf-menu li:hover {
+	visibility: inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+	position: relative;
+}
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	left: 0;
+	top: 0.7em; /* match top ul list item height */
+	z-index: 99;
+}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+	top: -999em;
+}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left: 148px; /* match ul width */
+	top: 0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+	top: -999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left: 148px; /* match ul width */
+	top: 0;
+}
+
+/* Modal Windows */
+#mask {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 8;
+	background: #000;
+	}
+	  
+	#page-content-wrap {
+		display: none;
+		position: absolute;
+		left: 0;
+		width: 700px;
+		height: 467px;
+		padding: 0;
+		background: transparent url(../img/modal-bg.png) repeat 0 0;
+		z-index: 10;
+		top: 202px !important;
+		}
+	  
+		#page-content #content {
+			background: transparent url(../img/content-bg.png) no-repeat 0 0;
+			width: 690px;
+			height: 457px;
+			margin: 5px;
+			}
+	  
+			#page-content #content .col-l {
+				padding: 10px 0 10px 35px;
+				}
+	  
+			#page-content #content .col-r {
+				padding: 10px 35px 10px 0;
+				}
+				
+			#page-content-wrap #close-modal {
+				background: transparent url(../img/close-btn.png) no-repeat 0 0;
+				display: block;
+				position: absolute;
+				top: 4px;
+				right: 5px;
+				text-indent: -999em;
+				width: 20px;
+				height: 20px;
+				}
+				#page-content-wrap #close-modal:hover {background: transparent url(../img/close-btn.png) no-repeat 0 -20px;}
+				#page-content-wrap #close-modal:focus {overflow: hidden;}
+
+
+
+/* Scrolling Gallery - Movign Boxes*/
+#gallery {
+	clear: both;
+	width: 100%;
+	height: 467px;
+	margin: 0 auto;
+	position: relative;
+	}
+
+	#gallery-thumbs {
+		margin: 30px auto;
+		width: 700px;
+		display: none;
+		}
+	
+		#gallery-thumbs li {
+			float: left;
+			list-style: none;
+			margin: 0;
+			position: relative;
+			cursor: pointer;
+			}
+		
+			#gallery-thumbs #gallery-gloss {
+				background: transparent url(../img/thumb-gloss.png) no-repeat 0 0;
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				}
+				
+			#gallery-thumbs .sliderBtn {
+				cursor: pointer !important;
+				}
+
+#gallery-wrapper {
+	clear: both;
+	overflow: auto;
+	height: 467px;
+	width: 730px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	padding-top: 20px;
+	}
+
+	#slider {
+		width: 100%;
+		margin: 0 auto;
+		position: relative;
+		}
+	
+		.scroll {
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			}
+		
+			.scrollContainer {
+	position: fixed;
+				}
+			
+				.scrollContainer div.panel {
+					margin:0 10px;
+					width: 700px;
+					height: 467px;
+					}
+
+			
+					
+					.inside {cursor: pointer;}
+					.inside.current {cursor: default;}
+
+						.inside img {
+							display: block;
+							width: 700px;
+							position: relative;
+							z-index: 2;
+							}
+							
+							#gallery-bg {
+								background: #000;
+								width: 700px;
+								height: 467px;
+								position: absolute;
+								top: 0;
+								left: 0;
+								z-index: 1;
+								}
+
+.left, .right {display: none;}
+
+/*Form Validation */
+.error{
+color:#FF0000;
+}
+
+/*Hide the thumb slider on the intro page if no flash*/
+#intro-page #gallery-thumbs-wrapper{
+display:none;
+}
+/*Align Modal window text properly on intro page if no flash*/
+#intro-page #page-content-wrap{
+text-align:left;
+}

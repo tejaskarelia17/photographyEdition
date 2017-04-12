@@ -1,0 +1,188 @@
+/*
+------------------------------------------------------
+[The HAB] CSS: Structure
+------------------------------------------------------
+*/
+div.innerWrapper{float:left;width:100%;}
+div.header{width:100%;float:left;padding-top:60px;}
+div.primaryNavigation{height:46px;float:right; background:url(../assets/images/pNavBg.jpg) repeat-x;}
+div.primaryNavigation ul{float:left;}
+div.primaryNavigation ul li{float:left;border:1px solid #FFFFFF;font-family:"kReg", Arial, Helvetica, sans-serif;font-size:1.3em;margin-right:1px;}
+div.primaryNavigation ul li a{display:block;color:#575757;padding:11px 19px;background-color:#e7e7e7;text-shadow:1px 1px #FFFFFF;}
+
+div.primaryNavigation ul li a:hover{display:block;color:#408a9e;background-color:#f0f0f0;border-top:1px solid #d9d9d9;border-bottom:1px solid #d9d9d9;text-shadow:1px 1px #FFFFFF;}
+
+
+
+div.secondaryNavigation{float:right;-moz-border-radius:10px;-webkit-border-radius:10px;-o-border-radius:10px;-ms-border-radius:10px;border-radius:10px;background-color:#ebebeb;border:1px solid #e0e0e0;padding:1px;margin-top:15px;}
+div.secondaryNavigation ul{float:left;-moz-border-radius:7px;-webkit-border-radius:7px;-o-border-radius:7px;-ms-border-radius:7px;border-radius:7px;border:1px solid #cccdce;}
+div.secondaryNavigation ul li{float:left;font-family:"kReg", Arial, Helvetica, sans-serif;font-size:1.3em; background:url(../assets/images/secondaryBorder.jpg) right no-repeat;}
+div.secondaryNavigation ul li.noBg{background:none;}
+div.secondaryNavigation ul li a{padding:10px 12px;display:block;color:#575757;}
+div.secondaryNavigation ul li input.search{font-family:"kReg", Arial, Helvetica, sans-serif;color:#575757;-moz-border-radius:15px;-webkit-border-radius:15px;-o-border-radius:15px;-ms-border-radius:15px;border-radius:15px;background:url(../assets/images/inputBg.jpg) repeat-x;border:1px solid #cacacb;padding:3px 0 3px 8px;width:130px;margin:8px 10px 0 10px;}
+div.secondaryNavigation ul li input.searchBtn{border:none;background:url(../assets/images/spritesIPE.png) 0 -93px no-repeat;width:16px;height:19px; float:left;margin:8px 10px 0 0;}
+div.contentWrapper{float:left;width:100%;}
+div.mBlockLeft, div.mBlockRight{float:left;width:50%;}
+div.mBlockLeft{margin-right:10px;}
+div.blockWrapper{
+	border: 1px solid #c6c6c6;
+	float: left;
+	position: relative;
+	margin-top: 20px;
+}
+div.contentBlock{position:absolute;width:100%;background-color:#e6e7e7;float:left;bottom:0;padding:12px 0 10px 0;-moz-border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0;-o-border-radius:5px 5px 0 0;-ms-border-radius:5px 5px 0 0;border-radius:5px 5px 0 0;left:0;}
+div.contentBlock p, div.countBlock p{float:left;color:#646464;font-size:1.3em;font-family:"kMed", Arial, Helvetica, sans-serif;padding-left:10px;}
+div.contentBlock1 p{width:90px;}
+div.contentBlock p img{margin:0 10px;}
+div.contentBlock p span{color:#41b4d4;}
+div.countBlock{float:right;border-left:3px solid #cacaca;padding:0 0 0 15px;}
+div.countBlock img.icon1, div.countBlock img.icon2{float:left;background:url(../assets/images/spritesIPE.png) no-repeat;width:21px;height:20px;}
+div.countBlock img.icon1{background-position:0 -119px;}
+div.countBlock img.icon2{background-position:0 -142px;}
+div.countBlock p{padding:3px 10px 0 5px;width:auto;}
+div.doubleBlockWrapper{float:left;width:244px;margin-right:6px;}
+div.marginTop{margin-top:5px;}
+div.photoBlockLeft{width:310px;float:left;padding-right:45px;}
+div.photoBlockLeft div.blockWrapper{border:none;width:298px;}
+div.photoBlockRight div.blockWrapper{border:none;width:640px;}
+div.photoBlockLeft div.blockWrapper div.contentBlock, div.photoBlockRight div.blockWrapper div.contentBlock{position:static;border:1px solid #c6c6c6;-moz-border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;-o-border-radius:0 0 5px 5px;-ms-border-radius:0 0 5px 5px;border-radius:0 0 5px 5px;}
+div.photoBlockLeft div.blockWrapper img.photoMainImg{width:300px;height:201px;}
+div.photoBlockRight div.blockWrapper img.photoMainBigImg{width:642px;height:426px;}
+div.photoBlockLeft div.blockWrapper div.contentBlock div.countBlock, div.photoBlockRight div.blockWrapper div.contentBlock div.countBlock{border-left:none;}
+div.teaserBlock, div.publishBlock{float:left;width:100%;padding-top:15px;}
+div.teaserBlock h2, div.teaserBlock p{display:block;color:#646464;font-size:1.4em;font-family:"kMed", Arial, Helvetica, sans-serif;}
+div.teaserBlock h2{padding-bottom:10px;}
+div.teaserBlock p{font-size:1.2em;font-family:"kReg", Arial, Helvetica, sans-serif;padding-top:3px;}
+div.publishBlock ul, div.albumTags, div.recentPhotos, div.followersBlock{float:left;width:100%;}
+div.publishBlock ul li{display:inline-block;font-family:"kReg", Arial, Helvetica, sans-serif;width:100%;padding-top:8px;}
+div.publishBlock ul li p{float:left;font-size:1.4em;color:#858585;}
+div.publishBlock ul li span{float:left;font-size:1.2em;color:#646464;padding:4px 0 0 5px;font-family:"kMed", Arial, Helvetica, sans-serif;}
+div.albumTags{padding:20px 0 25px 0;}
+div.albumTags h3, div.recentPhotos h3, div.product h3{font-family:"kReg", Arial, Helvetica, sans-serif;font-size:1.4em;color:#858585;display:block;}
+div.albumTags p{font-family:"kMed", Arial, Helvetica, sans-serif;font-size:1.2em;color:#646464;float:left;padding:5px 3px 5px 0;}
+div.albumTags div.copyright{font-family:"kReg", Arial, Helvetica, sans-serif;font-size:1.0em;color:#858585;display:block;clear:both;}
+div.recentPhotos h3{padding-bottom:10px;}
+div.photoBlockRight{
+	width: 100%;
+	float: left;
+}
+
+/*Menus*/
+.coolMenu ul{position:absolute;display:none;z-index:999;}
+.coolMenu li:hover ul.noJS{display:block;}
+.coolMenu ul{float:none;border-radius:0px !important;width:150px;}
+.coolMenu ul li{float:none !important;font-size:1.1em !important;border:none !important;}
+.coolMenu ul li a{background-color:#e9e9e9;float:none;color:#858585 !important;padding:6px 19px !important;}
+.coolMenu ul li:hover a{background:#dadada;color:#646464 !important;}
+
+.formBlock{/*background:#e7e7e7;border:1px solid #536376;*/padding:18px 22px;width:280px;position:relative;display:none;float:left;}
+.close{width:27px;height:27px;overflow:hidden;line-height:1000px;display:block;position:absolute;top:20px;right:10px; background:url(../assets/images/spritesIPE.png) 0 -229px no-repeat;float:right;}
+div.loginBox, div.fPassword, div.signupBox{float:left;width:400px;}
+div.loginBox h2, div.loginBox h3, div.fPassword h3, div.signupBox h3{display:block;color:#646464;font-size:3.0em;font-family:"kReg", Arial, Helvetica, sans-serif;}
+div.loginBox h3, div.fPassword h3{font-family:"kBold", Arial, Helvetica, sans-serif;}
+div.fPassword h3{font-family:"kMed", Arial, Helvetica, sans-serif;}
+ul.loginForm, ul.forgetPasswordForm, ul.signUpForm{float:left;width:100%;}
+ul.loginForm li, ul.forgetPasswordForm li, ul.signUpForm li{display:block;padding-top:10px;float:left;clear:both;}
+ul.loginForm li input.txtField, ul.forgetPasswordForm li input.txtField, ul.signUpForm li input.txtField{font-size:1.3em;color:#858585;font-family:"kReg", Arial, Helvetica, sans-serif;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px;border:1px solid #d9d9d9;background:#f8f8f8 url(../assets/images/checkedTick.png) 185px 5px no-repeat;width:200px;padding:10px 8px;}
+ul.loginForm li input.txtUnchecked, ul.forgetPasswordForm li input.txtUnchecked, ul.signUpForm li input.txtUnchecked{background:#f8f8f8 url(../assets/images/unCheckedTick.png) 185px 5px no-repeat;}
+ul.loginForm li a.forget{font-size:1.3em;color:#646464;font-family:"kMed", Arial, Helvetica, sans-serif;display:block;padding-left:10px;}
+ul.loginForm li input.checkBox, ul.signUpForm li input.checkBox{float:left;}
+ul.loginForm li label.loggedIn{float:left;padding:5px 0 0 5px;color:#858585;font-size:1.2em;font-family:"kReg", Arial, Helvetica, sans-serif;}
+ul.loginForm li input.btn, ul.forgetPasswordForm li input.btn, ul.signUpForm li input.btn, input.links{display:block;padding:0;color:#646464;font-size:1.4em;font-family:"kMed", Arial, Helvetica, sans-serif;
+-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px;border:1px solid #d3d4d4;background-color:#e7e7e7;padding:7px 10px;cursor:pointer;}
+div.errorBlock{font-size:1.1em;color:#fe0000;font-family:"kMed", Arial, Helvetica, sans-serif;float:left;padding-top:10px;}
+div.borderBlock{float:left;background:url(../assets/images/hr.jpg) repeat-x;margin:20px 0 15px 0;clear:both;height:2px;width:270px;}
+div.loginBox div.wrapper, div.fPassword div.wrapper, div.signupBox div.wrapper{float:left;width:100%;}
+div.loginBox div.wrapper h4, div.fPassword div.wrapper h4, div.signupBox div.wrapper h4{display:block;color:#646464;font-size:2.6em;font-family:"kMed", Arial, Helvetica, sans-serif;}
+div.loginBox div.wrapper input.btnSignup, div.fPassword div.wrapper input.btnSignup, div.signupBox div.wrapper input.btnSignup{display:block;padding:0;color:#3689a1;font-size:1.5em;font-family:"kMed", Arial, Helvetica, sans-serif;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px;border:1px solid #d3d4d4;background-color:#e7e7e7;padding:7px 10px;cursor:pointer;text-shadow:1px 1px #FFFFFF;margin-top:10px;}
+div.fPassword div.wrapper input.btnSignup, div.signupBox div.wrapper input.btnSignup{margin-left:80px;}
+ul.forgetPasswordForm li label, ul.signUpForm li label{float:left;padding:10px 15px 0 5px;color:#646464;font-size:1.3em;font-family:"kMed", Arial, Helvetica, sans-serif; margin-left:-135px;text-shadow:1px 1px #FFFFFF;width:115px;text-align:right;}
+ul.signUpForm li label.terms{float:left;padding:5px 0 0 5px;color:#646464;font-size:1.3em;font-family:"kMed", Arial, Helvetica, sans-serif; margin-left:0px;text-shadow:1px 1px #FFFFFF;width:200px;text-align:left;}
+ul li div.errorBlock{float:none;}
+
+ul.signUpForm li div.styleSelect{background:#F8F8F8 url(../assets/images/selectArrow.jpg) 184px no-repeat;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px;border:1px solid #d9d9d9;overflow: hidden;padding:10px 5px 2px;width: 206px;}
+ul.signUpForm li div.styleSelect select{background:none;font-size:1.3em;color:#858585;font-family:"kReg", Arial, Helvetica, sans-serif;height:23px;width:261px;border:0;}
+
+div.photoAlbum div.blockWrapper{
+	width: 296px;
+	margin-left: 20px;
+	float: left;
+}
+div.photoAlbum div.countBlock{float:right;border-left:3px solid #cacaca !important;padding:0 0 0 15px;}
+
+div.shop div.blockWrapper{margin-right:39px;}
+div.shop div.last{margin-right:0px;}
+div.shopWrapper{padding-top:15px;}
+div.shopWrapper, div.shopTopNav, div.followTopNav{
+	float: left;
+	width: 1280px;
+}
+div.followTopNav{padding-top:15px;}
+div.shopTopNav img.hr, div.followTopNav img.hr{
+	height: 2px;
+	width: 1050px;
+	padding-top: 22px;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 5px;
+}
+div.followTopNav img.hr{width:910px;}
+div.shopWrapper div.shopTopNav h2, div.product div.teaserBlock h2, div.followTopNav h2{font-family:"kMed", Arial, Helvetica, sans-serif;font-size:1.6em;color:#858585;float:left;padding-top:10px;}
+div.product div.teaserBlock h2{float:none;padding-top:0;}
+div.shopWrapper div.shopTopNav h3{font-family:"kMed", Arial, Helvetica, sans-serif;font-size:1.2em;color:#858585;float:right;}
+div.shopWrapper div.shopTopNav h3 span{float:left; padding:10px 10px 0 0;}
+
+div.footer{position:relative;float:left;text-align:center;width:100%;margin:20px 0 10px 0;}
+div.footer img.hr{width:100%;display:block;height:2px;}
+div.footer a{font-size:1.2em;color:#858585;font-family:"kReg", Arial, Helvetica, sans-serif;padding:10px 15px;display:inline-block; background:url(../assets/images/footerSeperator.jpg) right no-repeat;}
+div.footer a.last{background:none;}
+div.footer a.powered{padding:5px 0 0 0;float:right;background:none;}
+
+div.product div.publishBlock p{font-size:1.2em;color:#646464;font-family:"kMed", Arial, Helvetica, sans-serif;padding-top:2px;}
+div.followersBlock{padding:20px 0 0 0;}
+div.followersBlock div.wrapper{float:left;padding-top:45px;}
+div.followersBlock img{float:left;margin-right:10px;}
+div.followersBlock h2{display:block;font-size:1.4em;color:#646464;font-family:"kReg", Arial, Helvetica, sans-serif;}
+p.upload{display:inline-block;padding-top:20px;font-size:1.6em;color:#646464;font-family:"kReg", Arial, Helvetica, sans-serif;}
+
+
+div.followBlock{float:left;width:100%;background:url(../assets/images/hr.jpg) bottom repeat-x;padding:15px 0;}
+div.followBlock div.left{
+	float: left;
+	width: 350px;
+	border-right: 1px solid #f4f4f4;
+	margin-right: 20px;
+	background-color: #f2f2f2;
+}
+div.followBlock div.middle{
+	float: left;
+	width: 400px;
+	border-right: 1px solid #f4f4f4;
+	margin-right: 20px;
+	background-color: #F2F2F2;
+}
+div.followBlock div.right{float:left;width:135px;}
+div.followBlock div.left img{
+	float: left;
+	margin-right: 10px;
+	padding: 15px;
+	background-color: #EBEBEB;
+}
+div.followBlock div.left div.wrapper{
+	float: left;
+	width: 200px;
+	padding: 15px;
+}
+div.followBlock div.left h2, div.followBlock div.middle h3{display:block;font-size:1.4em;color:#858585;font-family:"kBold", Arial, Helvetica, sans-serif;}
+div.followBlock div.left p, div.followBlock div.middle p, div.followBlock div.right p, div.followBlock div.right a{float:left;font-size:1.2em;color:#646464;font-family:"kReg", Arial, Helvetica, sans-serif;padding-right:5px;padding-top:3px;}
+
+div.uploadBlockRight, div.uploadBlockRight div.loginBox{float:right;}
+div.uploadBlockRight div.loginBox{width:300px;}
+div.uploadBlockRight div.loginBox input.txtField{width:282px;background-color:#f8f8f8;background-image:none;font-family:"kMed", Arial, Helvetica, sans-serif;color:#646464;font-size:1.4em;}
+div.uploadBlockRight div.loginBox textarea.txtArea{width:282px;background-color:#f8f8f8;background-image:none;font-family:"kMed", Arial, Helvetica, sans-serif;color:#646464;font-size:1.4em;border:1px solid #D9D9D9;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px;padding:10px 8px;resize:none;}
+
+div.uploadBlockRight div.loginBox div.styleSelect{background:#F8F8F8 url(../assets/images/uploadSelect.png) 263px no-repeat;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px;border:1px solid #d9d9d9;overflow: hidden;padding:10px 5px 2px;width:287px;}
+div.uploadBlockRight div.loginBox div.styleSelect select{background:none;font-size:1.4em;color:#646464;font-family:"kMed", Arial, Helvetica, sans-serif;height:23px;width:337px;border:0;}
+
+div.uploadWrapper{float:left;width:301px;margin-left:20px;}
+input.links{float:left;margin-right:15px;margin-top:15px;}

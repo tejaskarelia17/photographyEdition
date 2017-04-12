@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "indian photography edition"
+AuthUserFile "/home/indianph/.htpasswds/public_html/passwd"
+require valid-user

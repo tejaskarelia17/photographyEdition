@@ -1,0 +1,216 @@
+/* font-face */
+@font-face {
+  font-family: "GeneralEnclosedFoundicons";
+  src: url("../fonts/iconx.eot");
+  src: url("../fonts/iconx.eot?#iefix") format("embedded-opentype"), url("../fonts/iconx.woff") format("woff"), url("../fonts/iconx.ttf") format("truetype"), url("../fonts/iconx.svg#GeneralEnclosedFoundicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* global icon styles */
+[class*="iconx-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: -2px;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+[class*="iconx-"]:before {
+  font-family: "GeneralEnclosedFoundicons";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
+
+/* icons */
+.iconx-settings:before {
+  content: "\f000";
+}
+
+.iconx-heart:before {
+  content: "\f001";
+}
+
+.iconx-star:before {
+  content: "\f002";
+}
+
+.iconx-plus:before {
+  content: "\f003";
+}
+
+.iconx-minus:before {
+  content: "\f004";
+}
+
+.iconx-checkmark:before {
+  content: "\f005";
+}
+
+.iconx-remove:before {
+  content: "\f006";
+}
+
+.iconx-mail:before {
+  content: "\f007";
+}
+
+.iconx-calendar:before {
+  content: "\f008";
+}
+
+.iconx-page:before {
+  content: "\f009";
+}
+
+.iconx-tools:before {
+  content: "\f00a";
+}
+
+.iconx-globe:before {
+  content: "\f00b";
+}
+
+.iconx-home:before {
+  content: "\f00c";
+}
+
+.iconx-quote:before {
+  content: "\f00d";
+}
+
+.iconx-people:before {
+  content: "\f00e";
+}
+
+.iconx-monitor:before {
+  content: "\f00f";
+}
+
+.iconx-laptop:before {
+  content: "\f010";
+}
+
+.iconx-phone:before {
+  content: "\f011";
+}
+
+.iconx-cloud:before {
+  content: "\f012";
+}
+
+.iconx-error:before {
+  content: "\f013";
+}
+
+.iconx-right-arrow:before {
+  content: "\f014";
+}
+
+.iconx-left-arrow:before {
+  content: "\f015";
+}
+
+.iconx-up-arrow:before {
+  content: "\f016";
+}
+
+.iconx-down-arrow:before {
+  content: "\f017";
+}
+
+.iconx-trash:before {
+  content: "\f018";
+}
+
+.iconx-add-doc:before {
+  content: "\f019";
+}
+
+.iconx-edit:before {
+  content: "\f01a";
+}
+
+.iconx-lock:before {
+  content: "\f01b";
+}
+
+.iconx-unlock:before {
+  content: "\f01c";
+}
+
+.iconx-refresh:before {
+  content: "\f01d";
+}
+
+.iconx-paper-clip:before {
+  content: "\f01e";
+}
+
+.iconx-video:before {
+  content: "\f01f";
+}
+
+.iconx-photo:before {
+  content: "\f020";
+}
+
+.iconx-graph:before {
+  content: "\f021";
+}
+
+.iconx-idea:before {
+  content: "\f022";
+}
+
+.iconx-mic:before {
+  content: "\f023";
+}
+
+.iconx-cart:before {
+  content: "\f024";
+}
+
+.iconx-address-book:before {
+  content: "\f025";
+}
+
+.iconx-compass:before {
+  content: "\f026";
+}
+
+.iconx-flag:before {
+  content: "\f027";
+}
+
+.iconx-location:before {
+  content: "\f028";
+}
+
+.iconx-clock:before {
+  content: "\f029";
+}
+
+.iconx-folder:before {
+  content: "\f02a";
+}
+
+.iconx-inbox:before {
+  content: "\f02b";
+}
+
+.iconx-website:before {
+  content: "\f02c";
+}
+
+.iconx-smiley:before {
+  content: "\f02d";
+}
+
+.iconx-search:before {
+  content: "\f02e";
+}

@@ -1,0 +1,82 @@
+/* -----------------------------------------
+   Quicksand Portfolio Filter
+----------------------------------------- */
+#filter {margin-bottom:30px;}
+#filter a { text-decoration:none; text-align:center; 
+	 padding:6px 7px; 
+	 border:none; 
+margin-right:5px;
+	 -webkit-border-radius:4px;
+	 -moz-border-radius:4px; 
+	 border-radius: 4px; 
+	 font:12px Verdana, Geneva, sans-serif; 
+	 font-weight:bold; 
+	 color:#ffffff; 
+	 background-color:#69b7ff; 
+	 background-image: -moz-linear-gradient(top, #69b7ff 0%, #1982a5 100%); 
+	 background-image: -webkit-linear-gradient(top, #69b7ff 0%, #1982a5 100%); 
+	 background-image: -o-linear-gradient(top, #69b7ff 0%, #1982a5 100%); 
+	 background-image: -ms-linear-gradient(top, #69b7ff 0% ,#1982a5 100%); 
+	 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1982a5', endColorstr='#1982a5',GradientType=0 ); 
+	 background-image: linear-gradient(top, #69b7ff 0% ,#1982a5 100%);   
+	 -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+	 -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+	 box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
+	  
+	 text-shadow: 0px -1px 0px #bababa; 
+	 filter: dropshadow(color=#bababa, offx=0, offy=-1); }
+#filter a:hover {
+ padding:6px 7px; 
+ border:none; 
+ -webkit-border-radius:4px;
+ -moz-border-radius:4px; 
+ border-radius: 4px; 
+ font:12px Verdana, Geneva, sans-serif; 
+ font-weight:bold; 
+ color:#ffffff; 
+ background-color:#389fff; 
+ background-image: -moz-linear-gradient(top, #389fff 0%, #067aa1 100%); 
+ background-image: -webkit-linear-gradient(top, #389fff 0%, #067aa1 100%); 
+ background-image: -o-linear-gradient(top, #389fff 0%, #067aa1 100%); 
+ background-image: -ms-linear-gradient(top, #389fff 0% ,#067aa1 100%); 
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#067aa1', endColorstr='#067aa1',GradientType=0 ); 
+ background-image: linear-gradient(top, #389fff 0% ,#067aa1 100%);   
+ -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+ -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+ box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
+  
+ text-shadow: 0px -1px 0px #bababa; 
+ filter: dropshadow(color=#bababa, offx=0, offy=-1);}
+
+#container{
+	display:block;
+	overflow:hidden;
+	width: 100%;
+	margin:0 auto;
+}
+
+#container li {
+float: left;
+	text-align:center;
+	list-style: none outside none;
+	margin: 6px;
+	position: relative;
+
+}
+
+#container li img{
+	height: 118px;
+	width: 118px;
+	-moz-box-shadow: 0 0 5px #000;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+	padding:6px;
+}
+
+#container ul{
+	overflow:hidden;
+}
+
+#container ul.hidden{
+	display:none;
+}
