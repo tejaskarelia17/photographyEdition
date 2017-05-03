@@ -1,3 +1,6 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300' rel='stylesheet' type='text/css'>
   <!-- Included CSS Files (Compressed) -->
@@ -5,7 +8,9 @@
   <link rel="stylesheet" href="<?php echo base_url()?>stylesheets/design.css">
 <link rel="stylesheet" href="<?php echo base_url()?>stylesheets/quicksand.css">
 
-<section class="service" style="background-color:black">
+<title>Red-Eye Photography</title>
+
+<section class="service">
 
       <div class="row mb20">
 

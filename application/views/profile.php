@@ -1,8 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
-        <title>Indian Photography Edition</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Red-Eye Photography</title>
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="description" content="Thumbnails Navigation Gallery with jQuery and CSS3" />
         <meta name="keywords" content="jquery, thumbnails, gallery, menu, navigation, full page, background, image, photo, portfolio, photography"/>
 		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
@@ -104,9 +105,13 @@
 
         <div>
             <span class="reference">
+             
                 <a href="javascript:history.go(-1)">Back</a>
+              
             </span>
+            
 		</div>
+        
         <div>
             <span class="reference2">
 				<a href="<?php echo base_url()?>index.php/profile/edit/<?php echo $data['userData']->id?>">Edit Profile</a><br />

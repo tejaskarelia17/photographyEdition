@@ -1,3 +1,7 @@
+<title>Red-Eye Photography</title>
+
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <section class="slab pb50">
   <div class="row">
          <div class="twelve mobile-four columns pt20">

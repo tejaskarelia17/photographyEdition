@@ -1,3 +1,6 @@
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
+
 <?php
 
 /*
@@ -17,20 +20,20 @@
 <style>
 .tab
 {
-	background-color:rgba(0,0,0,1);
-	color:rgba(255,255,255,1);
+	background-color:#FFF;
+	color:#000;
 	border:none;
 }
 .linkk
 {
-	color:rgba(0,204,255,1);
+	color:#3E72A8;
 }
 .linkk:hover
 {
-	color:rgba(255,255,255,1);
+	color:black;
 }
 </style>
-
+<title>Red-Eye Photography</title>
 <section class="services">
       <div class="row">
       <?php if(!$logged_in):?>
@@ -48,9 +51,9 @@
   </tr>
   <?php foreach ($data as $value):?>
   <tr>
-    <td class="tab"><a class="linkk" href="<?php echo base_url()."index.php/view/profile/$value->uid"?>"><?php echo ucwords(strtolower($value->userdata['userData']->username))?></a> :<span style="color:rgba(255,255,0,1)"> <a class="linkk" href="<?php echo base_url()."index.php/forum/viewPost/$value->id"?>"><?php echo $value->title?></span><br><span style="color: white"><?php echo date("g:i a F j, Y ", strtotime($value->timestamp))?></a></span></td>
-    <td class="tab" ><a style="color: aqua"href="<?php echo base_url()."index.php/view/profile/$value->uid"?>"><?php echo ucwords(strtolower($value->timestamps->username)).'<br></a><span style="color: white">'.date("g:i a F j, Y ", strtotime($value->timestamps->timestamp))?></span></td>
-   <!--<td class="tab" ><a style="color: white" href="<?php echo base_url()."index.php/forum/viewPost/$value->id"?>"></td>--><td class="tab" ><?php echo $value->noofposts?></a></td>
+    <td class="tab"><a class="linkk" href="<?php echo base_url()."index.php/view/profile/$value->uid"?>"><?php echo ucwords(strtolower($value->userdata['userData']->username))?></a> :<span style="color:#3E72A8;"> <a class="linkk" href="<?php echo base_url()."index.php/forum/viewPost/$value->id"?>"><?php echo $value->title?></span><br><span style="color: black"><?php echo date("g:i a F j, Y ", strtotime($value->timestamp))?></a></span></td>
+    <td class="tab" ><a style="color:#3E72A8;" href="<?php echo base_url()."index.php/view/profile/$value->uid"?>"><?php echo ucwords(strtolower($value->timestamps->username)).'<br></a><span style="color: black">'.date("g:i a F j, Y ", strtotime($value->timestamps->timestamp))?></span></td>
+   <!--<td class="tab" ><a style="color: black" href="<?php echo base_url()."index.php/forum/viewPost/$value->id"?>"></td>--><td class="tab" ><?php echo $value->noofposts?></a></td>
   </tr>
   <?php endforeach;?>
 </table> 

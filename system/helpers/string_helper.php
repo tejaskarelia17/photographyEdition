@@ -1,256 +1,307 @@
-﻿/*
-Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.html or http://ckeditor.com/license
-*/
-
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * @file Forms Plugin
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.1.6 or newer
+ *
+ * @package		CodeIgniter
+ * @author		ExpressionEngine Dev Team
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 1.0
+ * @filesource
  */
 
-CKEDITOR.plugins.add( 'forms',
+// ------------------------------------------------------------------------
+
+/**
+ * CodeIgniter String Helpers
+ *
+ * @package		CodeIgniter
+ * @subpackage	Helpers
+ * @category	Helpers
+ * @author		ExpressionEngine Dev Team
+ * @link		http://codeigniter.com/user_guide/helpers/string_helper.html
+ */
+
+// ------------------------------------------------------------------------
+
+/**
+ * Trim Slashes
+ *
+ * Removes any leading/trailing slashes from a string:
+ *
+ * /this/that/theother/
+ *
+ * becomes:
+ *
+ * this/that/theother
+ *
+ * @access	public
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('trim_slashes'))
 {
-	init : function( editor )
+	function trim_slashes($str)
 	{
-		var lang = editor.lang;
+		return trim($str, '/');
+	}
+}
 
-		editor.addCss(
-			'form' +
-			'{' +
-				'border: 1px dotted #FF0000;' +
-				'padding: 2px;' +
-			'}\n' );
+// ------------------------------------------------------------------------
 
-		editor.addCss(
-			'img.cke_hidden' +
-			'{' +
-				'background-image: url(' + CKEDITOR.getUrl( this.path + 'images/hiddenfield.gif' ) + ');' +
-				'background-position: center center;' +
-				'background-repeat: no-repeat;' +
-				'border: 1px solid #a9a9a9;' +
-				'width: 16px !important;' +
-				'height: 16px !important;' +
-			'}' );
-
-		// All buttons use the same code to register. So, to avoid
-		// duplications, let's use this tool function.
-		var addButtonCommand = function( buttonName, commandName, dialogFile )
-		{
-			editor.addCommand( commandName, new CKEDITOR.dialogCommand( commandName ) );
-
-			editor.ui.addButton( buttonName,
-				{
-					label : lang.common[ buttonName.charAt(0).toLowerCase() + buttonName.slice(1) ],
-					command : commandName
-				});
-			CKEDITOR.dialog.add( commandName, dialogFile );
-		};
-
-		var dialogPath = this.path + 'dialogs/';
-		addButtonCommand( 'Form',			'form',			dialogPath + 'form.js' );
-		addButtonCommand( 'Checkbox',		'checkbox',		dialogPath + 'checkbox.js' );
-		addButtonCommand( 'Radio',			'radio',		dialogPath + 'radio.js' );
-		addButtonCommand( 'TextField',		'textfield',	dialogPath + 'textfield.js' );
-		addButtonCommand( 'Textarea',		'textarea',		dialogPath + 'textarea.js' );
-		addButtonCommand( 'Select',			'select',		dialogPath + 'select.js' );
-		addButtonCommand( 'Button',			'button',		dialogPath + 'button.js' );
-		addButtonCommand( 'ImageButton',	'imagebutton',	CKEDITOR.plugins.getPath('image') + 'dialogs/image.js' );
-		addButtonCommand( 'HiddenField',	'hiddenfield',	dialogPath + 'hiddenfield.js' );
-
-		// If the "menu" plugin is loaded, register the menu items.
-		if ( editor.addMenuItems )
-		{
-			editor.addMenuItems(
-				{
-					form :
-					{
-						label : lang.form.menu,
-						command : 'form',
-						group : 'form'
-					},
-
-					checkbox :
-					{
-						label : lang.checkboxAndRadio.checkboxTitle,
-						command : 'checkbox',
-						group : 'checkbox'
-					},
-
-					radio :
-					{
-						label : lang.checkboxAndRadio.radioTitle,
-						command : 'radio',
-						group : 'radio'
-					},
-
-					textfield :
-					{
-						label : lang.textfield.title,
-						command : 'textfield',
-						group : 'textfield'
-					},
-
-					hiddenfield :
-					{
-						label : lang.hidden.title,
-						command : 'hiddenfield',
-						group : 'hiddenfield'
-					},
-
-					imagebutton :
-					{
-						label : lang.image.titleButton,
-						command : 'imagebutton',
-						group : 'imagebutton'
-					},
-
-					button :
-					{
-						label : lang.button.title,
-						command : 'button',
-						group : 'button'
-					},
-
-					select :
-					{
-						label : lang.select.title,
-						command : 'select',
-						group : 'select'
-					},
-
-					textarea :
-					{
-						label : lang.textarea.title,
-						command : 'textarea',
-						group : 'textarea'
-					}
-				});
-		}
-
-		// If the "contextmenu" plugin is loaded, register the listeners.
-		if ( editor.contextMenu )
-		{
-			editor.contextMenu.addListener( function( element )
-				{
-					if ( element && element.hasAscendant( 'form', true ) && !element.isReadOnly() )
-						return { form : CKEDITOR.TRISTATE_OFF };
-				});
-
-			editor.contextMenu.addListener( function( element )
-				{
-					if ( element && !element.isReadOnly() )
-					{
-						var name = element.getName();
-
-						if ( name == 'select' )
-							return { select : CKEDITOR.TRISTATE_OFF };
-
-						if ( name == 'textarea' )
-							return { textarea : CKEDITOR.TRISTATE_OFF };
-
-						if ( name == 'input' )
-						{
-							var type = element.getAttribute( 'type' );
-
-							if ( type == 'text' || type == 'password' )
-								return { textfield : CKEDITOR.TRISTATE_OFF };
-
-							if ( type == 'button' || type == 'submit' || type == 'reset' )
-								return { button : CKEDITOR.TRISTATE_OFF };
-
-							if ( type == 'checkbox' )
-								return { checkbox : CKEDITOR.TRISTATE_OFF };
-
-							if ( type == 'radio' )
-								return { radio : CKEDITOR.TRISTATE_OFF };
-
-							if ( type == 'image' )
-								return { imagebutton : CKEDITOR.TRISTATE_OFF };
-						}
-
-						if ( name == 'img' && element.getAttribute( '_cke_real_element_type' ) == 'hiddenfield' )
-							return { hiddenfield : CKEDITOR.TRISTATE_OFF };
-					}
-				});
-		}
-
-		editor.on( 'doubleclick', function( evt )
-			{
-				var element = evt.data.element;
-
-				if ( element.is( 'form' ) )
-					evt.data.dialog = 'form';
-				else if ( element.is( 'select' ) )
-					evt.data.dialog = 'select';
-				else if ( element.is( 'textarea' ) )
-					evt.data.dialog = 'textarea';
-				else if ( element.is( 'img' ) && element.getAttribute( '_cke_real_element_type' ) == 'hiddenfield' )
-					evt.data.dialog = 'hiddenfield';
-				else if ( element.is( 'input' ) )
-				{
-					var type = element.getAttribute( 'type' );
-
-					switch ( type )
-					{
-						case 'text' : case 'password':
-							evt.data.dialog = 'textfield';
-							break;
-						case 'button' : case 'submit' : case 'reset' :
-							evt.data.dialog = 'button';
-							break;
-						case 'checkbox' :
-							evt.data.dialog = 'checkbox';
-							break;
-						case 'radio' :
-							evt.data.dialog = 'radio';
-							break;
-						case 'image' :
-							evt.data.dialog = 'imagebutton';
-							break;
-					}
-				}
-			});
-	},
-
-	afterInit : function( editor )
+/**
+ * Strip Slashes
+ *
+ * Removes slashes contained in a string or in an array
+ *
+ * @access	public
+ * @param	mixed	string or array
+ * @return	mixed	string or array
+ */
+if ( ! function_exists('strip_slashes'))
+{
+	function strip_slashes($str)
 	{
-		var dataProcessor = editor.dataProcessor,
-			htmlFilter = dataProcessor && dataProcessor.htmlFilter,
-			dataFilter = dataProcessor && dataProcessor.dataFilter;
-
-		// Cleanup certain IE form elements default values.
-		if ( CKEDITOR.env.ie )
+		if (is_array($str))
 		{
-			htmlFilter && htmlFilter.addRules(
+			foreach ($str as $key => $val)
 			{
-				elements :
-				{
-					input : function( input )
-					{
-						var attrs = input.attributes,
-							type = attrs.type;
-						if ( type == 'checkbox' || type == 'radio' )
-							attrs.value == 'on' && delete attrs.value;
-					}
-				}
-			} );
+				$str[$key] = strip_slashes($val);
+			}
+		}
+		else
+		{
+			$str = stripslashes($str);
 		}
 
-		if ( dataFilter )
-		{
-			dataFilter.addRules(
-			{
-				elements :
-				{
-					input : function( element )
-					{
-						if ( element.attributes.type == 'hidden' )
-							return editor.createFakeParserElement( element, 'cke_hidden', 'hiddenfield' );
-					}
-				}
-			} );
-		}
-	},
-	requires : [ 'image', 'fakeobjects' ]
-} );
+		return $str;
+	}
+}
 
-if 
+// ------------------------------------------------------------------------
+
+/**
+ * Strip Quotes
+ *
+ * Removes single and double quotes from a string
+ *
+ * @access	public
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('strip_quotes'))
+{
+	function strip_quotes($str)
+	{
+		return str_replace(array('"', "'"), '', $str);
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Quotes to Entities
+ *
+ * Converts single and double quotes to entities
+ *
+ * @access	public
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('quotes_to_entities'))
+{
+	function quotes_to_entities($str)
+	{
+		return str_replace(array("\'","\"","'",'"'), array("&#39;","&quot;","&#39;","&quot;"), $str);
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Reduce Double Slashes
+ *
+ * Converts double slashes in a string to a single slash,
+ * except those found in http://
+ *
+ * http://www.some-site.com//index.php
+ *
+ * becomes:
+ *
+ * http://www.some-site.com/index.php
+ *
+ * @access	public
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('reduce_double_slashes'))
+{
+	function reduce_double_slashes($str)
+	{
+		return preg_replace("#(^|[^:])//+#", "\\1/", $str);
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Reduce Multiples
+ *
+ * Reduces multiple instances of a particular character.  Example:
+ *
+ * Fred, Bill,, Joe, Jimmy
+ *
+ * becomes:
+ *
+ * Fred, Bill, Joe, Jimmy
+ *
+ * @access	public
+ * @param	string
+ * @param	string	the character you wish to reduce
+ * @param	bool	TRUE/FALSE - whether to trim the character from the beginning/end
+ * @return	string
+ */
+if ( ! function_exists('reduce_multiples'))
+{
+	function reduce_multiples($str, $character = ',', $trim = FALSE)
+	{
+		$str = preg_replace('#'.preg_quote($character, '#').'{2,}#', $character, $str);
+
+		if ($trim === TRUE)
+		{
+			$str = trim($str, $character);
+		}
+
+		return $str;
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Create a Random String
+ *
+ * Useful for generating passwords or hashes.
+ *
+ * @access	public
+ * @param	string	type of random string.  basic, alpha, alunum, numeric, nozero, unique, md5, encrypt and sha1
+ * @param	integer	number of characters
+ * @return	string
+ */
+if ( ! function_exists('random_string'))
+{
+	function random_string($type = 'alnum', $len = 8)
+	{
+		switch($type)
+		{
+			case 'basic'	: return mt_rand();
+				break;
+			case 'alnum'	:
+			case 'numeric'	:
+			case 'nozero'	:
+			case 'alpha'	:
+
+					switch ($type)
+					{
+						case 'alpha'	:	$pool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+							break;
+						case 'alnum'	:	$pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+							break;
+						case 'numeric'	:	$pool = '0123456789';
+							break;
+						case 'nozero'	:	$pool = '123456789';
+							break;
+					}
+
+					$str = '';
+					for ($i=0; $i < $len; $i++)
+					{
+						$str .= substr($pool, mt_rand(0, strlen($pool) -1), 1);
+					}
+					return $str;
+				break;
+			case 'unique'	:
+			case 'md5'		:
+
+						return md5(uniqid(mt_rand()));
+				break;
+			case 'encrypt'	:
+			case 'sha1'	:
+
+						$CI =& get_instance();
+						$CI->load->helper('security');
+
+						return do_hash(uniqid(mt_rand(), TRUE), 'sha1');
+				break;
+		}
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Add's _1 to a string or increment the ending number to allow _2, _3, etc
+ *
+ * @param   string  $str  required
+ * @param   string  $separator  What should the duplicate number be appended with
+ * @param   string  $first  Which number should be used for the first dupe increment
+ * @return  string
+ */
+function increment_string($str, $separator = '_', $first = 1)
+{
+	preg_match('/(.+)'.$separator.'([0-9]+)$/', $str, $match);
+
+	return isset($match[2]) ? $match[1].$separator.($match[2] + 1) : $str.$separator.$first;
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Alternator
+ *
+ * Allows strings to be alternated.  See docs...
+ *
+ * @access	public
+ * @param	string (as many parameters as needed)
+ * @return	string
+ */
+if ( ! function_exists('alternator'))
+{
+	function alternator()
+	{
+		static $i;
+
+		if (func_num_args() == 0)
+		{
+			$i = 0;
+			return '';
+		}
+		$args = func_get_args();
+		return $args[($i++ % count($args))];
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Repeater function
+ *
+ * @access	public
+ * @param	string
+ * @param	integer	number of repeats
+ * @return	string
+ */
+if ( ! function_exists('repeater'))
+{
+	function repeater($data, $num = 1)
+	{
+		return (($num > 0) ? str_repeat($data, $num) : '');
+	}
+}
+
+
+/* End of file string_helper.php */
+/* Location: ./system/helpers/string_helper.php */

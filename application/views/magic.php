@@ -1,3 +1,5 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <?php
 /*
 * Copyright (c) 2008 http://www.webmotionuk.com / http://www.webmotionuk.co.uk
@@ -355,7 +357,7 @@ if(strlen($large_photo_exists)>0 && strlen($thumb_photo_exists)>0){
                <h1 class="top">UPLOAD</h1>
             </div>
          </div>
-      </div>
+  </div>
 </section>
 <section class="services">	
     <form name="photo" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">

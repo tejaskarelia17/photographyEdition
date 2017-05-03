@@ -1,8 +1,11 @@
+
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <?php
 if(isset($_POST['email'])) {
      
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "tarun8613@gmail.com";
+    $email_to = "ashkazani2012@gmail.com";
     $email_subject = "IPE Enquiry";
      
      
@@ -110,11 +113,13 @@ a:visited {
 <style style="text/css">
 	#px{
 		background: url('<?php echo base_url()?>images/fb.jpg') no-repeat center center fixed;
-		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='<?php echo base_url()?>images/fb.jpg', sizingMethod='scale');
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='<?php echo base_url()?>images/fb.jpg', 
+		sizingMethod='scale');
 	}
 	</style>
 <link rel="stylesheet" href="<?php echo base_url()?>stylesheets/footer.css">
 <script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
+<title>Red-Eye Photography</title>
 </head>
 
 <body id="home_index" class="welcome-page" style="background-color:#333 !important;" onpageshow="return;">
@@ -203,7 +208,7 @@ a:visited {
 </table>
 </div>
 </div>
-<div id="footer"><ul id="footerInner"><li class="copy" style="margin-left:-200px">© 2013 Indian Photography Edition</li>
+<div id="footer"><ul id="footerInner"><li class="copy" style="margin-left:-200px">© 2013 Red-Eye Photography</li>
 <li class="first" style="margin-left:100px"><a href="<?php echo base_url('index.php/welcome/about') ?>"> &nbsp;&nbsp;About Us</a></li>
 <li><a href="<?php echo base_url('index.php/welcome/terms') ?>"> |&nbsp;&nbsp;Terms &amp; Conditions</a></li>
 <li><a href="<?php echo base_url('index.php/welcome/privacy') ?>"> |&nbsp;&nbsp;Privacy</a></li>
@@ -215,14 +220,14 @@ a:visited {
 <font face="Calibri">
 <div class="clear"></div>
 <div id="first-time-footercontainer">
-	<div id="first-time-footer">
-		<span id="footer-notes"><a href="http://www.hostrabbit.in/" target="_blank"><img src="<?php echo base_url()?>images/HRlogo_Final1.png" width="7%" style="position:fixed;margin-left:-40px"  onmouseover="this.src='<?php echo base_url()?>images/HRlogo_Final_hover.png';" onmouseout="this.src='<?php echo base_url()?>images/HRlogo_Final1.png';"></a></span>
-		<ul class="nav">
-      		<li>© 2013 Indian Photography Edition</li>
+	<div id="first-time-footer"><span id="footer-notes"><a href="http://www.hostrabbit.in/" target="_blank"><img src="<?php echo base_url()?>images/HRlogo_Final1.png" width="7%" style="position:fixed;margin-left:-40px"  onmouseover="this.src='<?php echo base_url()?>images/HRlogo_Final_hover.png';" onmouseout="this.src='<?php echo base_url()?>images/HRlogo_Final1.png';" /></a></span>
+	  <ul class="nav">
+	    <li>© 2013 Red-Eye Photography</li>
 <li><a href="<?php echo base_url('index.php/welcome/about') ?>">About</a></li>
 <li><a href="<?php echo base_url('index.php/welcome/terms') ?>"> |&nbsp;&nbsp;Terms &amp; Conditions</a></li>
 <li><a href="<?php echo base_url('index.php/welcome/privacy') ?>"> |&nbsp;&nbsp;Privacy</a></li>
-<li><a href="https://www.facebook.com/pages/Indian-Photography-Edition/1404249313125245" target="_blank"> |&nbsp;&nbsp;Like Us on FB</a></li>
+<li><a href="https://www.facebook.com/pages/Red-Eye Photography/1404249313125245" target="_blank"> |&nbsp;&nbsp;
+Like Us on FB</a></li>
 <li><a href="<?php echo base_url('index.php/welcome/contact') ?>">|&nbsp;&nbsp;Contact Us</a></li>
 		</ul>
 		<div class="clear"></div>

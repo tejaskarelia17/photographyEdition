@@ -1,3 +1,6 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 <script>
     $(function(){
         //var category=<?php //echo $post['userData']->category_id?>;
@@ -55,19 +58,21 @@
     }
 .tab
 {
-	background-color:rgba(0,0,0,1);
-	color:rgba(255,255,255,1);
+	background-color:white;
+	color:black;
 	border:none;
 }
 .linkk
 {
-	color:rgba(0,204,255,1);
+	color:#3E72A8;
 }
 .linkk:hover
 {
 	color:rgba(255,255,255,1);
 }
 </style>
+
+<title>Red-Eye Photography</title>
 
 <br>
 <!--<div style="width:96%;margin: auto">
@@ -77,7 +82,7 @@
 
 <section class="services">
 
-    <h2 style="color:Yellow;margin-left:2%"> <?php echo $post->title?></h2><br><br>
+    <h2 style="color:Blue;margin-left:2%"> <?php echo $post->title?></h2><br><br>
              <table width="1300" height="51" border="0" class="table2" style="border:none">
   <tr>
     <td class="tab" width="15%"  style="border-bottom:thin; font-size:16px"><b>Author</b><hr></td>
@@ -94,8 +99,8 @@
     <table width="1300" height="51" border="1" align="center" id="forumthread" class="table2" style="border-bottom:thick;margin-top:-15px">
     <tr>
         <td class="tab" width="15%">
-        <a style="color:aqua" href="<?php echo base_url('index.php/view/profile').'/'.$value->userdata['userData']->id?>" width="150" height="150">
-        <h3 style="color:yellow"><?php echo $value->userdata['userData']->username?></h3>
+        <a style="color:Black" href="<?php echo base_url('index.php/view/profile').'/'.$value->userdata['userData']->id?>" width="150" height="150">
+        <h3 style="color:Black"><?php echo $value->userdata['userData']->username?></h3>
         <?php if($value->userdata['userData']->profileImage==NULL):?>
         <img src="<?php echo base_url()?>assets/images/productDummy.jpg" alt="" />
         <?php else:?>
@@ -106,7 +111,7 @@
         </a>
         </td>
         <td class="tab">
-            <span style="color:rgba(204,204,204,1)"><?php echo $this->IPEModel->replace_links($value->message)?><br><div align="right" style="padding-top:80px"><a href="#re" class="push">Reply</a><br><br><?php echo date('g:i a F j, Y ', strtotime($value->timestamp))?></div></span>
+            <span style="color:black"><?php echo $this->IPEModel->replace_links($value->message)?><br><div align="right" style="padding-top:80px"><a href="#re" class="push">Reply</a><br><br><?php echo date('g:i a F j, Y ', strtotime($value->timestamp))?></div></span>
         </td>
     </tr>
     <?php endforeach;?>
@@ -115,9 +120,9 @@
 
 <?php if($logged_in):?>
 <form action="<?php echo base_url()?>index.php/forum/addToThread/<?php echo $post->id?>" method="POST">
-    <h4 style="color:white;margin:20px;">Reply To Post:</h4>
-    <a name="re"><h5 style="color:white;margin:20px;">Message:</h5><br></a>
-    <textarea style="background:#494949; width:98%; height:100px; border-color:#494949; color:white;font-family:sans-Serif;font-size:16px; margin-left:20px;" id="addTextarea" name="message"></textarea><br>
+    <h4 style="color:black;margin:20px;">Reply To Post:</h4>
+    <a name="re"><h5 style="color:black;margin:20px;">Message:</h5><br></a>
+    <textarea style="background-color:#EBEDFA; width:98%; height:100px; color:black;font-family:sans-Serif;font-size:16px; margin-left:20px;" id="addTextarea" name="message"></textarea><br>
     <input style="margin-left:20px" class="push socle" type="submit"><input style="margin-left:20px" class="push socle" type="Reset">
 </form>
 <?php else:?>

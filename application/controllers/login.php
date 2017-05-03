@@ -110,16 +110,10 @@ class login extends CI_Controller{
     
     		$this->load->helper('captcha');
     	
-                $vals = array(
-                'img_path'     => './captcha/',
-                'word' => str_pad(rand(0, pow(10, 3)-1), 3, '0', STR_PAD_LEFT),
-                'img_url'     => 'http://www.indianphotographyedition.com/captcha/',
-                'img_width'     => '100',
-                'img_height' => 50,
-                'font_path'     => './system/fonts/texb.ttf',
-                'expiration' => 7200
-                );
-    
+                 $vals = array(
+        'img_path' => 'captcha/',
+        'img_url' => base_url().'captcha/',
+        );
                  // create captcha image
                 $cap = create_captcha($vals);
                 // store image html code in a variable
@@ -184,15 +178,10 @@ class login extends CI_Controller{
             
             	$this->load->helper('captcha');
     	
-                $vals = array(
-                'img_path'     => './captcha/',
-                'word' => str_pad(rand(0, pow(10, 3)-1), 3, '0', STR_PAD_LEFT),
-                'img_url'     => 'http://www.indianphotographyedition.com/captcha/',
-                'img_width'     => '100',
-                'img_height' => 50,
-                'font_path'     => './system/fonts/texb.ttf',
-                'expiration' => 7200
-                );
+                 $vals = array(
+        'img_path' => 'captcha/',
+        'img_url' => base_url().'captcha/',
+        );
     
                  // create captcha image
                 $cap = create_captcha($vals);
@@ -217,7 +206,7 @@ class login extends CI_Controller{
             $city=  $this->input->post('city');
             $state=  $this->input->post('state');
             if($this->IPEModel->add_user($user,$password,$email,$state,$city)){
-                $data['text']='Please verify your account with the e-mail you will receive shortly.';
+                $data['text']='Registered Successfully. Please Login..!!';
                        $this->load->helper('url_helper');
         $this->load->helper(array('form', 'url'));
         $this->load->library('email');
@@ -227,10 +216,10 @@ class login extends CI_Controller{
             $config['wordwrap'] = TRUE; 
             $this->email->initialize($config);
 
-            $this->email->from('indianph@indianphotographyedition.com', 'Indian Photography Edition');
+            $this->email->from('ashkazani@yahoo.com', 'Poloroid');
             $this->email->to($email); 
-            $this->email->subject('Indian Photography Edition');
-            $this->email->message('Welcome to Indian Photography EditionPlease click the link below to activate your account. http://indianphotographyedition.com/index.php/login/verificationsuccess?code="'.md5($user). "   Thank You. ");  
+            $this->email->subject('Poloroid');
+            $this->email->message('Welcome to Poloroid. Please click the link below to activate your account. http://localhost/123/index.php/login/verificationsuccess?code="'.md5($user). "   Thank You. ");  
             $this->email->send();
                $this->template->write_view('content', 'signupsuccess', $data, TRUE);
     	      $this->template->render();
@@ -270,10 +259,10 @@ class login extends CI_Controller{
             $config['wordwrap'] = TRUE; 
             $this->email->initialize($config);
 
-            $this->email->from('indianph@indianphotographyedition.com', 'Indian Photography Edition');
+            $this->email->from('ashkazani@yahoo.com', 'Poloroid');
             $this->email->to($_POST['email']); 
-            $this->email->subject('Indian Photography Edition');
-            $this->email->message('Indian Photography Edition New Password : '.$newpass );  
+            $this->email->subject('Poloroid');
+            $this->email->message('Poloroid New Password : '.$newpass );  
             $this->email->send();
                $this->template->write_view('content', 'signupsuccess', $data, TRUE);
     	      $this->template->render();

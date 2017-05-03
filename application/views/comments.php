@@ -1,3 +1,7 @@
+
+
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <script type="text/javascript">
     $(function(){
         $('#commentForm').submit(function(e){
@@ -14,8 +18,10 @@
         });
     });
 </script>
+<title>Red-Eye Photography</title>
+
 <div class="twelve mobile-four columns">
-<h4><span><i class="iconz-bubbles-2"></i>COMMENTS</span></h4>
+<h4 style="color:black"><span><i class="iconz-bubbles-2"></i>COMMENTS</span></h4>
 
     <?php foreach($comments as $value):?>
 <div class="comment-container">                
@@ -35,8 +41,8 @@
         <a style="margin-left:800px;color:red" href="<?php echo base_url()?>index.php/comments/deleteComment/<?php echo $value->id?>/<?php echo $pid?>"><img src="<?php echo base_url()?>images/del.png"></a>
         <?php endif;?>
         
-<a style="color:#CCC" href="<?php echo base_url('index.php/profile/view').'/'.$value->userdata->id?>" title="<?php echo ucwords(strtolower($value->userdata->username))?>"><?php echo ucwords(strtolower($value->userdata->username))?></a></span><br>
-    <small style="color:Grey"><?php echo date('F d,Y h:m:s',  strtotime($value->timestamp))?>
+<a style="color:#000" href="<?php echo base_url('index.php/profile/view').'/'.$value->userdata->id?>" title="<?php echo ucwords(strtolower($value->userdata->username))?>"><?php echo ucwords(strtolower($value->userdata->username))?></a></span><br>
+    <small style="color:black"><?php echo date('F d,Y h:m:s',  strtotime($value->timestamp))?>
         <?php $l=$this->session->userdata('logged_in');
         if(isset($l)):
         $s=$this->session->userdata('id');
@@ -47,7 +53,7 @@
     </small>
         
 
-<p><?php echo $value->comment?></p>
+<p style="color:black"><?php echo $value->comment?></p>
 <br><br>
 </div></div><hr style="border-top: 1px solid #999">
     <?php endforeach;?>
@@ -57,10 +63,10 @@
 <?php if(isset($log)):?>
 <?php if($log):?>
 
-<h4><a name="reply" style="color:white"><font face="Calibri">Leave a Reply</font></a></h4>
+<h4><a name="reply" style="color:black"><font face="Calibri">Leave a Reply</font></a></h4>
 
 <form id="commentForm" action="<?php echo base_url()?>index.php/comments/addComments/<?php echo $pid?>" method="POST">
-  <textarea id="addComment" style="width:600px;height:170px" cols="5000" rows="10"></textarea>   
+  <textarea id="addComment" style="width:600px;height:170px;color:black" cols="5000" rows="10"></textarea>   
 
 <input type="submit" style="width:100px" class="push socle left"></a>
 </form>

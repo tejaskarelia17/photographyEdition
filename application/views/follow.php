@@ -1,3 +1,5 @@
+<title>Red-Eye Photography</title>
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 
 
 <section class="services">

@@ -1,3 +1,5 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <style>
 .tab
 {
@@ -14,6 +16,7 @@
 	color:rgba(255,255,255,1);
 }
 </style>
+<title>Red-Eye Photography</title>
 <section class="services">
 <div class="row">
 <table class="table2" style="border:none">

@@ -1,3 +1,4 @@
+<title>Red-Eye Photography</title>
 <?php
 class view extends CI_Controller{
     
@@ -187,7 +188,7 @@ class view extends CI_Controller{
                 $config['charset'] = 'iso-8859-1';
                 $config['wordwrap'] = TRUE; 
                 $this->email->initialize($config);
-                $this->email->from('ashkazani2012@gmail.com', 'Indian Photography Edition');
+                $this->email->from('indianph@indianphotographyedition.com', 'Indian Photography Edition');
                 $this->email->to($this->IPEModel->getOwnerOfPicture($pid)->email); 
                 $this->email->subject('Indian Photography Edition');
                 $this->email->message("Your picture has been deleted for violating privacy policy. If you continue to post such pictures your account may be deleted  Thank You. ");  

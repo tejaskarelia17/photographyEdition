@@ -1,7 +1,9 @@
-<section class="services">
+<title>Red-Eye Photography</title>
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/><section class="services">
 <div class="row">
   <div class="six mobile-four columns"><font face="Calibri">
-    <p style="color:white; font-size:24px">Validate Age</p><br><p style="color:grey;font-size:16px">Inorder to continue with the registration process kindly tell us when you were born</p></font>
+    <p style="color:black; font-size:24px">Validate Age</p><br><p style="color:black;font-size:16px">Inorder to continue with the registration process kindly tell us when you were born</p></font>
 <table class="table2" style="border:none">
 <tr>
 <td>

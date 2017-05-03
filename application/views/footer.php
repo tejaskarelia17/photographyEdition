@@ -1,3 +1,6 @@
+<title>Red-Eye Photography</title>
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 <footer>
     <div class="row">
       <div class="twelve mobile-four columns text-center">

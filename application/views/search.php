@@ -1,8 +1,10 @@
+<title>Red-Eye Photography</title>
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <section class="services">
 
 <div class="row mt50">
   <div class="six mobile-four columns">
-    <h4 align="center">Pictures: <?php echo count($array);?></h4>
+    <h4 align="center" style="color:black">Pictures: <?php echo count($array);?></h4>
 <table style="border:none" class="table2" cellspacing="0" cellpadding="2">
 <?php for($i=0;$i<count($array);$i+=3) :?>
   <tr>
@@ -35,7 +37,7 @@
 
   </div>
   <div class="six mobile-four columns">
-    <h4 align="center">Users</h4>
+    <h4 align="center" style="color:black">Users</h4>
 <table style="border:none"  class="table2" cellspacing="0" cellpadding="2">
 <?php for($i=0;$i<count($users);$i+=3) :?>
   <tr>
@@ -70,19 +72,19 @@
     </td>
   </tr>
   <tr style="margin-top:-30px; background:transparent">
-    <td style="color:Aqua;" align="center"><?php if(isset($users[$i])): echo ucwords(strtolower($users[$i]->username)); endif;?></td>
-    <td style="color:Aqua;" align="center"><?php if(isset($users[$i+1])):echo ucwords(strtolower($users[$i+1]->username)); endif;?></td>
-    <td style="color:Aqua;" align="center"><?php if(isset($users[$i+2])):echo ucwords(strtolower($users[$i+2]->username)); endif;?></td>
+    <td style="color:black;" align="center"><?php if(isset($users[$i])): echo ucwords(strtolower($users[$i]->username)); endif;?></td>
+    <td style="color:black;" align="center"><?php if(isset($users[$i+1])):echo ucwords(strtolower($users[$i+1]->username)); endif;?></td>
+    <td style="color:black;" align="center"><?php if(isset($users[$i+2])):echo ucwords(strtolower($users[$i+2]->username)); endif;?></td>
   </tr>
   <tr style="margin-top:-30px; background:transparent">
-    <td style="color:White;" align="center"><?php if(isset($users[$i])): echo "ipe".($users[$i]->id +3000); endif;?></td>
-    <td style="color:White;" align="center"><?php if(isset($users[$i+1])):echo "ipe".($users[$i+1]->id +3000); endif;?></td>
-    <td style="color:White;" align="center"><?php if(isset($users[$i+2])):echo "ipe".($users[$i+2]->id +3000); endif;?></td>
+    <td style="color: #000;" align="center"><?php if(isset($users[$i])): echo "rep".($users[$i]->id +3000); endif;?></td>
+    <td style="color:black;" align="center"><?php if(isset($users[$i+1])):echo "rep".($users[$i+1]->id +3000); endif;?></td>
+    <td style="color:black;" align="center"><?php if(isset($users[$i+2])):echo "rep".($users[$i+2]->id +3000); endif;?></td>
   </tr>
   <tr style="margin-top:-30px; background:transparent">
-    <td style="color:White;" align="center"><?php if(isset($users[$i])): echo ucwords(strtolower($users[$i]->city)); endif;?></td>
-    <td style="color:White;" align="center"><?php if(isset($users[$i+1])):echo ucwords(strtolower($users[$i+1]->city)); endif;?></td>
-    <td style="color:White;" align="center"><?php if(isset($users[$i+2])):echo ucwords(strtolower($users[$i+2]->city)); endif;?></td>
+    <td style="color:black;" align="center"><?php if(isset($users[$i])): echo ucwords(strtolower($users[$i]->city)); endif;?></td>
+    <td style="color:black;" align="center"><?php if(isset($users[$i+1])):echo ucwords(strtolower($users[$i+1]->city)); endif;?></td>
+    <td style="color:black;" align="center"><?php if(isset($users[$i+2])):echo ucwords(strtolower($users[$i+2]->city)); endif;?></td>
   </tr>
   <?php endfor;?>
 </table>

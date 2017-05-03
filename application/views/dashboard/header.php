@@ -1,7 +1,11 @@
+
+
 <!DOCTYPE html>
 
 <html lang="en" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths wf-proximanova-n4-active wf-proximanova-n7-active wf-active" style="">
 	<head>
+    <link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<script type="text/javascript" src="<?php echo base_url()?>dashboard/auth013.js"></script>
 		<script id="twitter-wjs" src="<?php echo base_url()?>dashboard/widgets.js"></script>
@@ -19,7 +23,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>dashboard/widget114.css" media="all">
 		<meta charset="utf-8">
 		<meta name="generator" content="WordPress 3.5.1">
-		<title>Indian Photography Edition</title>
+		<title>Red-Eye Photography</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 		<script src="cb=gapi.loaded_0" async></script>
 		<script type="text/javascript" async src="<?php echo base_url()?>dashboard/plusone.js" gapi_processed="true"></script>
@@ -150,7 +154,7 @@ if(!$l ): ?>
 <a href="<?php echo base_url()?>index.php/dashboard/updates">
 <?php endif; ?>
 
-<img src="<?php echo base_url()?>images/logo_top.png" onmouseover="this.src='<?php echo base_url()?>images/logo_top_hover.png';"
+<img src="<?php echo base_url()?>images/logo_top.png" onmouseover="this.src='<?php echo base_url()?>images/Logo_top_hover.png';"
                  onmouseout="this.src='<?php echo base_url()?>images/logo_top.png';" alt="Indian Photography Edition"></a>
 								</li>
 
@@ -158,9 +162,11 @@ if(!$l ): ?>
 									<?php if(!$l ):
 									?>
 									<a href="<?php echo base_url()?>index.php/login">SIGN UP/LOGIN</a>
+                                  
 									<?php else: ?>
 								<li style="margin-top:8px;" class="has-dropdown">
 									<a href="<?php echo base_url()?>index.php/notifications" style="text-transform: uppercase"> <?php echo $this -> session -> userdata('username'); ?>
+                                      
 									<?php $this->load->view('notification'); ?> </a>
 									<ul>
 										<li>
@@ -177,9 +183,10 @@ if(!$l ): ?>
 										</li>
 									</ul>
 
-								</li>
+								</li><li style="margin-top:8px;">
+                                <a href="<?php echo base_url()?>index.php">Home</a>
 								<li style="margin-top:8px;">
-									<?php if($this->IPEModel->isAdmin('id')):?>
+									<?php if($this->IPEModel->isAdmin($this -> session -> userdata('id'))):?>
 									<a href="<?php echo base_url()?>index.php/admin">ADMIN</a>
 								</li>
 								<?php endif;endif; ?>
@@ -270,12 +277,12 @@ if(!$l ): ?>
 								<li style="margin-top:8px;">
 									<a href="<?php echo base_url()?>index.php/buysell">STORE</a>
 								</li>
-							<li style="margin-left:470px;">	<div id="search">
+							<li style="margin-top:8px;">	
 									<form action="<?php echo base_url()?>index.php/search" method="get">
 										<input type="text" placeholder="Search" name="search" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field"/>
-										<input type="submit" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+										
 									</form>
-								</div></li>
+								</li>
 							</ul>
 						</section>
 					</div>
@@ -284,40 +291,40 @@ if(!$l ): ?>
 			</div>
 
 		</header>
-		<div class="container" role="main" style="background-color:#333">
+		<div class="container" role="main" style="background-color:white">
 			<!-- start nav -->
 			<nav id="menuu" style="background-color:black; height: 1200px;">
 
 				<ul style="top: 80px;"><hr style="color:white">
 					<li id="menu-item-2287" class="interface menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item current-menu-ancestor current-menu-parent menu-item-2287">
 						<a class="parent" style="font-size:1.2em" href="<?php echo base_url()?>index.php/dashboard/updates">Recent Update</a>
-						<div class="categories-panel" style="height: 936px;"></div>
+						<div class="categories-panel" style="height: 700px;"></div>
 					</li>
 					<li id="menu-item-2287" class="interface menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item current-menu-ancestor current-menu-parent menu-item-2287">
 						<a class="parent" style="font-size:1.2em" href="<?php echo base_url()?>index.php/dashboard/messages">Messages</a>
-						<div class="categories-panel" style="height: 936px;"></div>
+						<div class="categories-panel" style="height: 700px;"></div>
 					</li>
 					<li id="menu-item-2287" class="interface menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item current-menu-ancestor current-menu-parent menu-item-2287">
 						<a class="parent" style="font-size:1.2em" href="<?php echo base_url()?>index.php/dashboard/requests">Requests</a>
 					<li id="menu-item-2287" class="interface menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item current-menu-ancestor current-menu-parent menu-item-2287">
 						<a class="parent" style="font-size:1.2em" href="<?php echo base_url()?>index.php/dashboard/friends">Friends</a>
-						<div class="categories-panel" style="height: 936px;"></div>
+						<div class="categories-panel" style="height: 700px;"></div>
 					</li>
 					<li id="menu-item-2287" class="interface menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item current-menu-ancestor current-menu-parent menu-item-2287">
 						<a class="parent" style="font-size:1.2em" href="<?php echo base_url()?>index.php/dashboard/following">Following</a>
-						<div class="categories-panel" style="height: 936px;"></div>
+						<div class="categories-panel" style="height: 700px;"></div>
 					</li>
 					<li id="menu-item-2287" class="interface menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item current-menu-ancestor current-menu-parent menu-item-2287">
 						<a class="parent" style="font-size:1.2em" href="<?php echo base_url()?>index.php/dashboard/followers">Followers</a>
-						<div class="categories-panel" style="height: 936px;"></div>
+						<div class="categories-panel" style="height: 700px;"></div>
 					</li>
 					<li id="menu-item-2287" class="interface menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item current-menu-ancestor current-menu-parent menu-item-2287">
 						<a class="parent" style="font-size:1.2em" href="<?php echo base_url()?>index.php/dashboard/credits">Credits</a>
-						<div class="categories-panel" style="height: 936px;"></div>
+						<div class="categories-panel" style="height: 700px;"></div>
 					</li>
 					<li id="menu-item-2287" class="interface menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item current-menu-ancestor current-menu-parent menu-item-2287">
 						<a class="parent" style="font-size:1.2em" href="<?php echo base_url()?>index.php/dashboard/analyse">Analyse</a>
-						<div class="categories-panel" style="height: 936px;"></div>
+						<div class="categories-panel" style="height: 700px;"></div>
 					</li>
 					<div id="arrow-down" class="arrow-down" data-nav-down="0" style="display: none;"></div>
 			</nav>
@@ -327,7 +334,7 @@ if(!$l ): ?>
 					<canvas width="120" height="120"></canvas><canvas width="120" height="120" style="display: none;"></canvas>
 				</div>
 			</div>
-			<div class="grid" id="grid" style="height: 881px; display: block;">
+			<div class="grid" id="grid" style="height: 700px; display: block;">
 				<div class="breadcrumbs-search">
 
 				</div>

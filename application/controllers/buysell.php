@@ -1,3 +1,4 @@
+<title>Red-Eye Photography</title>
 <?php
 class buysell extends CI_Controller{
     public function __construct() {

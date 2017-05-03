@@ -1,3 +1,4 @@
+<title>Red-Eye Photography</title>
 <?php 
 
 class gallery extends CI_Controller{

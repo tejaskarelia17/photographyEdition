@@ -1,3 +1,4 @@
+<title>Red-Eye Photography</title>
 <?php
 
 /*
@@ -10,6 +11,9 @@
  *
  * @author Saldanhas
  */
+ 
+ 
+ 
 class messaging extends CI_Controller{
     
     public function __construct() {
@@ -42,13 +46,14 @@ class messaging extends CI_Controller{
         $logged=  $this->session->userdata('logged_in');
         if(!isset($logged))$logged=FALSE;
         
-        if($logged){
+        if($logged){ 
             $data['data']=$this->IPEModel->getMessageThread($this->session->userdata('id'),$uid);
             $data['username']=$this->IPEModel->getUserData($uid);
             $data['username']=$data['username']['userData']->username;
             $data['uid2']=$uid;
             $this->template->write_view('content', 'messageThread', $data, TRUE);
     	    $this->template->render();
+			
         }
         else{
            redirect('/login', 'refresh');

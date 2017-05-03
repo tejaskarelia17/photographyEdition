@@ -1,3 +1,6 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 <link rel="image_src" href="<?php echo base_url("uploads/images")."/".$photoData->location?>" />
 <style>
 @font-face {
@@ -19,6 +22,7 @@ url('timeless-webfont.svg#timeless-webfont') format('svg');
    <script type="text/javascript" src="<?php echo base_url()?>javascripts/Rating/jquery.rating.js"></script>
    <script type="text/javascript" src="<?php echo base_url()?>javascripts/Rating/jquery.rating.pack.js"></script>
   <script type="text/javascript" src="<?php echo base_url()?>javascripts/jquery.js"></script>
+<title>Red-Eye Photography</title>
 <body bgcolor="black">
 <h1 align="center" style="padding-top:15px;color:white">Change Cover<br />
     <img src="<?php echo base_url()?>images/highlight.png" /></h1>

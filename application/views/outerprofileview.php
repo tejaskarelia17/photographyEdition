@@ -1,11 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
-        <title>Indian Photography Edition</title>
+
+
+        <title>Red-Eye Photography</title>
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="description" content="Thumbnails Navigation Gallery with jQuery and CSS3" />
-        <meta name="keywords" content="jquery, thumbnails, gallery, menu, navigation, full page, background, image, photo, portfolio, photography"/>
-		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+        <meta name="description" content="" />
+        <meta name="keywords" content=""/>
                 <link rel="stylesheet" href="<?php echo base_url()?>css/style.css" type="text/css" media="screen"/>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script src="<?php echo base_url()?>js/cufon-yui.js" type="text/javascript"></script>
@@ -159,7 +162,7 @@
 		</div>
 <div>
             <span class="reference2">
-                                IPE PIN : IPE<?php echo ($data['userData']->id +3000)?>
+                                REP PIN : REP<?php echo ($data['userData']->id +3000)?>
                                 <br>
             		<?php if($owner):?>
 				<a href="<?php echo base_url()?>index.php/profile/edit/<?php echo $data['userData']->id?>">Edit Profile</a><br />
@@ -241,7 +244,7 @@
 				}).bind('mouseenter',function(){
 					$(this).stop().animate({'opacity':'1'});
 				}).bind('mouseleave',function(){
-					$(this).stop().animate({'opacity':'0.7'});
+					$(this).stop().animate({'opacity':'1'});
 				});
 				
 				//function to hide the current opened menu

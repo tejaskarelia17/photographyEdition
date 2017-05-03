@@ -1,3 +1,7 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
+
 <script type="text/javascript">
     $(function(){
         $('.croppedImage').each(function(){
@@ -12,7 +16,9 @@
             }
         });
         });
-</script>  
+</script>
+<title>Red-Eye Photography</title>
+  
 
 <section class="services">
 <div id="contentContainer">
@@ -40,7 +46,7 @@
 <div align="center">
 <table class="table2" style="border:none;" >
 <tr>
-<td align="center"><p align="right" class="white">Indian Photography Edition</p><a href="http://www.hostrabbit.in" target="_blank"> <img align="right" src="<?php echo base_url()?>images/IPE_Final.png"></a></td>
+<td align="center"><p align="right" class="white">Red-Eye Photography</p><a href="http://www.hostrabbit.in" target="_blank"> <img align="right" src="<?php echo base_url()?>images/IPE_Final.png"></a></td>
 <td align="center"><p class="white">Developed and Maintained by </p><a href="http://www.hostrabbit.in" target="_blank"> <img src="<?php echo base_url()?>images/HRlogo_Final.png"></a></td>
 </tr></table>
 </div>

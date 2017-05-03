@@ -1,3 +1,8 @@
+
+
+<title>Red-Eye Photography</title>
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 <section class="services">
 <div class="row">
   <div class="six mobile-four columns">
@@ -5,7 +10,7 @@
       <form action='<?php echo base_url()?>index.php/login/forgotpass' method="post"> 
           <div class="row">
     <div class="two mobile-one columns">
-      <label class="right inline">Email:</label>
+      <label class="right inline" style="color:#000">Email:</label>
     </div>
     <div class="ten mobile-three columns">
       <input style="background-color:#494949; border-color:#494949;" type="text" placeholder="Email" name="email" class="eight" />

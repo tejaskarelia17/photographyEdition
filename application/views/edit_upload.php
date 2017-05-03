@@ -1,3 +1,6 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 <script type="text/javascript" src="<?php echo base_url()?>js/jquery.form.js"></script>
 <script src="<?php echo base_url()?>/js/crop/jquery.Jcrop.js"></script>
 <link rel="stylesheet" href="<?php echo base_url()?>js/crop/jquery.Jcrop.css" type="text/css" />
@@ -71,6 +74,8 @@ $(function(){
 });
 </script>
 
+
+<title>Red-Eye Photography</title>
 
 <section class="services">
 <div class="row2" style="margin-top:20px">

@@ -1,3 +1,5 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <?php
 
 /*
@@ -21,10 +23,11 @@
         margin-bottom: 10px;
     }
 </style>
+<title>Red-Eye Photography</title>
 <br><br>
 
 
-<section class="portfolio recent" style="background:black">
+<section class="portfolio recent" style="background:white">
       <div class="row mb20">
          <div class="four mobile-four columns xp_pink pt20">
 
@@ -52,10 +55,10 @@
 	</div>
 
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 </section>
-
+<br><br><br><br><br><br><br><br><br><br>
     <?php if($logged_in):?>
 
 

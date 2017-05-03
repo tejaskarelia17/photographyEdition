@@ -1,3 +1,5 @@
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 <link rel='stylesheet' id='layout-css'  href='<?php echo base_url()?>css/layout.css' type='text/css' media='all' />
 <link rel='stylesheet' id='reset-css'  href='<?php echo base_url()?>css/reset.css' type='text/css' media='all' />
 <link rel='stylesheet' id='jscrollpane_css-css'  href='<?php echo base_url()?>css/jquery.jscrollpane.css' type='text/css' media='all' />
@@ -15,6 +17,7 @@
 <style type="text/css">
 body{ background:url('<?php echo base_url()?>images/pattern.jpg'); }
 </style>
+<title>Red-Eye Photography</title>
 </head>
 <body>
 	<div id="masterload">

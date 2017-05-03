@@ -1,11 +1,15 @@
+<title>Red-Eye Photography</title>
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 <section class="services" style="margin-left:275px;">
 <div class="row2 mt50">
   <div class="six mobile-four columns">
-  <h2 align="center">Edit Profile</h2>
+  <h2 align="center" style="color:black">Edit Profile</h2>
 <?php echo form_open_multipart('profile/editBasicProfile');?>    
-  <table class="table2" style="background:transparent;border:none"><tr><td width="25%"><label>Name :</label></td>
-	<td width="75%"><input type="text" name="username" placeholder="Name" value="<?php echo $data->username?>" /></td></tr>
-      <tr style="background:transparent;border:none"><td><label>Display Pic :</label></td>
+  <table class="table2" style="background:transparent;border:none"><tr><td width="25%"><label style="color:black">Name :</label></td>
+	<td width="75%"><input style="background-color:#EBEDFA;" type="text" name="username" placeholder="Name" value="<?php echo $data->username?>" /></td></tr>
+      <tr style="background:transparent;border:none"><td><label style="color:black">Display Pic :</label></td>
 <td><table class="table2" style="background:transparent;border:none">
 <tr style="background:transparent;border:none"><td>      <?php if($data->profileImage!=NULL):?>
         <img src="<?php echo base_url()."uploads/userProfile/".$data->profileImage;?>" align="center" height="100px" width="100px" alt="<?php echo $data->username?>"" />
@@ -13,20 +17,22 @@
 </td><td><input type="file" id="myfile" name="userfile" value="Browse" class="file" style="display:hidden;width:90px;opacity: 0.0;" />
 <label for="myfile" class="push" data-role="button" data-inline="true" data-mini="true" data-corners="false" style="width:90px">Browse</label></td></tr></table></td></tr>
 
-        <tr style="background:transparent;border:none"><td><label>About :</label></td><td>
-	<textarea cols="50" style="width:510px;height:80px" name="bio"><?php echo $data->bio?></textarea></td></tr>
-	<tr style="background:transparent;border:none"><td><label>Facebook :</label></td><td>
-	<input type="text" placeholder="Go to your profile and copy the url and paste it!"  name="facebook" value="<?php echo $data->facebook?>"/></td></tr>
-	<tr style="background:transparent;border:none"><td><label>Twitter :</label></td><td>
-	<input type="text" placeholder="Go to your profile and copy the url and paste it!"  name="twitter" value="<?php echo $data->twitter?>"/></td></tr>
-	<tr style="background:transparent;border:none"><td><label>Website :</label></td><td>
-	<input type="text" placeholder="Website" name="site" value="<?php echo $data->website?>"/></td></tr>
-	<tr style="background:transparent;border:none"><td><label>Email :</label></td><td>
-	<input type="text" placeholder="Email" name="email" value="<?php echo $data->email?>"/></td></tr>
-	<tr style="background:transparent;border:none"><td><label>Phone :</label></td><td>
-	<input type="text" placeholder="Phone" name="contact" value="<?php echo $data->contact?>"/></td></tr></table>
-<h4 align="center"><input type="submit" value="Save" class="push socle" /></h4>
+        <tr style="background:transparent;border:none"><td><label style="color:black">About :</label></td><td>
+	<textarea cols="50" style="width:510px;height:80px;background-color:#EBEDFA;" name="bio"><?php echo $data->bio?></textarea></td></tr>
+	<tr style="background:transparent;border:none"><td><label style="color:black">Facebook :</label></td><td>
+	<input style="background-color:#EBEDFA;" type="text" placeholder="Go to your profile and copy the url and paste it!"  name="facebook" value="<?php echo $data->facebook?>"/></td></tr>
+	<tr style="background:transparent;border:none"><td><label style="color:black">Twitter :</label></td><td>
+	<input style="background-color:#EBEDFA;" type="text" placeholder="Go to your profile and copy the url and paste it!"  name="twitter" value="<?php echo $data->twitter?>"/></td></tr>
+	<tr style="background:transparent;border:none"><td><label style="color:black">Website :</label></td><td>
+	<input style="background-color:#EBEDFA;" type="text" placeholder="Website" name="site" value="<?php echo $data->website?>"/></td></tr>
+	<tr style="background:transparent;border:none"><td><label style="color:black">Email :</label></td><td>
+	<input style="background-color:#EBEDFA;" type="text" placeholder="Email" name="email" value="<?php echo $data->email?>"/></td></tr>
+	<tr style="background:transparent;border:none"><td><label style="color:black">Phone :</label></td><td>
+	<input style="background-color:#EBEDFA;" type="text" placeholder="Phone" name="contact" value="<?php echo $data->contact?>"/></td></tr></table>
+<h4 align="center"><input type="submit" value="Save" class="push socle"  href="<?php echo base_url()?>index.php">home</h4>
 </form>
+
+           
   </div>
   
 <a onclick="myDelete()">DE-REGISTER</a><br>
@@ -46,7 +52,7 @@ if (r==true)
 </script>
 
 
-Change Cover Pic
+
 
     <script src="../javascripts/jquery.foundation.mediaQueryToggle.js"></script>
     <script src="../javascripts/jquery.foundation.forms.js"></script>

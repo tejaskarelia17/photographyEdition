@@ -1,3 +1,5 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <style>
 	#messagethread li {
 		width: 95%;
@@ -11,9 +13,11 @@
 	}
     </style>
 
+<title>Red-Eye Photography</title>
+
 <section class="services">
   <div class="row mt40">
-<h4><span><i class="iconz-bubbles-2"></i> Conversation</span></h4>
+<h4><span><i class="iconz-bubbles-2" style="color:#000"> Conversation</i></span></h4>
 
 
     <?php foreach ($data as $value) :?>
@@ -26,9 +30,9 @@
         <img src="<?php echo base_url() . "uploads/userProfile/" . $value -> profileImage; ?>" style="border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px;height:100px;width:100px" />
         <?php endif; ?></a>    </div>
     <div class="comment-content">
-<span class="comment-title"><?php echo $value->username?></span><br>
+<span class="comment-title" style="color:#000"><?php echo $value->username?></span><br>
 <small style="color:grey"><?php echo date('F d,Y h:m:s',  strtotime($value->timestamp))?></small><br>
-<p><?php echo $value->message?></p>
+<p><span  style="color:#000"><?php echo $value->message?></p></span>
     </div>
 </div><br>
     <?php endforeach; ?>

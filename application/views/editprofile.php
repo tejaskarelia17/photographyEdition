@@ -1,3 +1,6 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 <style>
 .push { cursor:pointer;display: inline-block; nowhitespace: afterproperty; margin: 5px; padding: 8px 15px; background: #555; border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; transition: all 0.2s ease-out; box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0,0,0,0.3), 0 0 4px 1px rgba(0,0,0,0.1); /* Font styles */ color: #FFF; text-decoration: none; ; }
 .push:hover { background: #999; color: #FFF; }
@@ -6,6 +9,7 @@
 .socle:after { content: ""; z-index: -1; position: absolute; border-radius: 6px; box-shadow: inset 0 1px 0 rgba(0,0,0,0.15), inset 0 -1px 0 rgba(255,255,255,0.1); top: -6px; bottom: -6px; right: -6px; left: -6px; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.15)); }
 </style>
 <?php echo form_open_multipart('profile/editBasicProfile');?>    
+<title>Red-Eye Photography</title>
 <h1 align="center" style="padding-top:15px">EDIT PROILE<br /><img src="<?php echo base_url()?>images/highlight.png" /></h1>
 <h2 align="center">Change Display Pic</h2><br>
             <?php if($data->profileImage!=NULL):?>

@@ -47,26 +47,31 @@ function validateForm()
 	}
 }  
 </script>
+<title>Red-Eye Photography</title>
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
+<script>
+
 <section class="services">
 <div class="row">
   <div class="six mobile-four columns">
-    <h4 class="h"><span>Reset Password</span></h4>
+    <h4 class="h"><span style="color:black">Reset Password</span></h4>
       <form action='<?php echo base_url()?>index.php/profile/editpass' name="myForm" onSubmit="return validateForm()" method="post"> 
           <div class="row">
     <div class="two mobile-one columns">
-      <label class="right inline">Password:</label>
+      <label style="color:black" class="right inline">Password:</label>
     </div>
     <div class="ten mobile-three columns">
-      <input style="background-color:#494949; border-color:#494949;" type="password" placeholder="Password" name="pass" class="eight" />
+      <input style="background-color:#EBEDFA;" type="password" placeholder="Password" name="pass" class="eight" />
     </div>
 <div class="two mobile-one columns">
-      <label class="right inline">Confirm Password:</label>
+      <label style="color:black; margin-left:-50px" class="right inline">Confirm Password:</label>
     </div>
     <div class="ten mobile-three columns">
-      <input style="background-color:#494949; border-color:#494949;" type="password" placeholder="Confirm Password" name="cpass" class="eight" />
+      <input style="background-color:#EBEDFA;" type="password" placeholder="Confirm Password" name="cpass" class="eight" />
     </div>
   </div>
-<input type="submit" value="Reset Password" style="width:100px" class="push socle"></td>
+<input type="submit" value="Reset Password" style="width:130px" class="push socle"></td>
      </tr></table></form>
 
   </div>

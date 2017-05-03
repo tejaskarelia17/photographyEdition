@@ -28,6 +28,8 @@
             });
     })
 </script>
+<title>Red-Eye Photography</title>
+
 <section class="slab pb50">
   <div class="row">
          <div class="twelve mobile-four columns pt20">

@@ -1,3 +1,7 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
+
 <h1 align="center" style="padding-top:15px"><?php echo $name?><br />
     <img src="<?php echo base_url()?>images/highlight.png" /></h1>
 <table align="center" border="0" cellspacing="0" cellpadding="2" style="margin:auto;width:600px;height:600px;"  >

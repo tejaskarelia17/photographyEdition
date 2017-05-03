@@ -1,3 +1,4 @@
+<title>Red-Eye Photography</title>
 <?php
 
 class Dashboard extends CI_Controller {

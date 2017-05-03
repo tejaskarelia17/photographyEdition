@@ -1,3 +1,7 @@
+<title>Red-Eye Photography</title>
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 <nav>
 	<script src="cb=gapi.loaded_0" async></script>
 	<script type="text/javascript" async src="plusone.js" gapi_processed="true"></script>
@@ -17,7 +21,8 @@
 			$('.scroll-pane').jScrollPane({autoReinitialise: true});
 			$('.grid').height($(window).innerHeight() - 50);
 		});
-	</script>
+	</script>\
+    <script>
     <link rel="stylesheet" href="<?php echo base_url()?>dashboard/navigation.css">
   <link rel="stylesheet" href="<?php echo base_url()?>dashboard/design.css">
 <link rel="stylesheet" href="<?php echo base_url()?>dashboard/foundation.css">

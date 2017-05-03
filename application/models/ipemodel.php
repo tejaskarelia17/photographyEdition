@@ -170,6 +170,19 @@ class Ipemodel extends CI_Model {
 		} else
 			echo $this -> db -> _error_message();
 	}
+	
+	function changeLanding($filename){
+		$this -> db -> where('id','1');
+		$data = array(
+				'filename' => $filename
+			);
+		$this -> db -> update("landing", $data);
+	}
+	
+	function getLanding(){
+		$this -> db -> where('id','1');
+		return $this -> db -> get("landing")->first_row()->filename;;
+	}
 
 	function addPicture($id, $title, $description, $dfile_name, $category, $camera, $album, $tagarray = array()) {
 		$data1 = array('user_id' => $id, 'Title' => $title, 'Description' => $description, 'location' => $dfile_name, 'category' => $category, 'camera' => $camera);
@@ -920,54 +933,56 @@ class Ipemodel extends CI_Model {
 			$this -> db -> query("UPDATE notifications SET seen=1 WHERE id=$val->id");
 			$type = $val -> type;
 			$timestamp = $val -> timestamp;
-			$data[$count]['timestamp'] = $timestamp;
 			switch ($type) {
 				case 0 :
 					//addFollower
 					$typeId = $val -> type_id;
-					if(!$this -> db -> query("SELECT users.id FROM users,follow WHERE follow.id=$typeId  AND users.id=follow.following") -> first_row()) break;
-					$data[$count]['userdata'] = $this -> getUserData($this -> db -> query("SELECT users.id FROM users,follow WHERE follow.id=$typeId  AND users.id=follow.following") -> first_row() -> id);
+					if(!$this -> db -> query("SELECT users.id FROM users, follow WHERE follow.id=$typeId  AND users.id=follow.following") -> first_row()) break;
+					$data[$count]['userdata'] = $this -> getUserData($this -> db -> query("SELECT users.id FROM users, follow WHERE follow.id=$typeId  AND users.id=follow.following") -> first_row() -> id);
 					if(!$data[$count]['userdata'])
 						break;
 					$data[$count]['stringit'] = $data[$count]['userdata']['userData'] -> username . " has started to follow you.";
 					$data[$count]['link'] = base_url() . "index.php/profile/view/" . $data[$count]['userdata']['userData'] -> id;
+					$data[$count]['timestamp'] = $timestamp;
 					$count++;
 					break;
 				case 1 :
 					//forum
 					$typeId = $val -> type_id;
-					if(!$this -> db -> query("SELECT users.id FROM users,forums WHERE forums.id=$typeId  AND users.id=forums.uid") -> first_row()) break;
-					$data[$count]['userdata'] = $this -> getUserData($this -> db -> query("SELECT users.id FROM users,forums WHERE forums.id=$typeId  AND users.id=forums.uid") -> first_row() -> id);
+					if(!$this -> db -> query("SELECT users.id FROM users, forums WHERE forums.id=$typeId  AND users.id=forums.uid") -> first_row()) break;
+					$data[$count]['userdata'] = $this -> getUserData($this -> db -> query("SELECT users.id FROM users, forums WHERE forums.id=$typeId  AND users.id=forums.uid") -> first_row() -> id);
 					if(!$data[$count]['userdata'])
 						break;
 					$data[$count]['stringit'] = $data[$count]['userdata']['userData'] -> username . " has posted in a post you were involved in.";
 					$data[$count]['link'] = base_url() . "index.php/forum/viewPost/" . $typeId;
+					$data[$count]['timestamp'] = $timestamp;
 					$count++;
 					break;
 				case 2 :
 					//comment
-					$typeId = $val -> type_id;
-					if(!$this -> db -> query("SELECT * FROM users,comments WHERE comments.id=$typeId AND users.id=comments.uid") -> first_row()) break;
-					$data[$count]['userdata'] = $this -> db -> query("SELECT * FROM users,comments WHERE comments.id=$typeId AND users.id=comments.uid") -> first_row();
+					$typeId = $val -> type_id;					
+					if(!$this -> db -> query("SELECT * FROM users, comments WHERE comments.id=$typeId AND users.id=comments.uid") -> first_row()) break;
+					$data[$count]['userdata'] = $this -> db -> query("SELECT * FROM users, comments WHERE comments.id=$typeId AND users.id=comments.uid") -> first_row();
 					if(!$data[$count]['userdata'])
 						break;
 					$picID = $data[$count]['userdata'] -> pid;
 					$data[$count]['userdata'] = $this -> getUserData($data[$count]['userdata']);
 					$data[$count]['stringit'] = $data[$count]['userdata']['userData'] -> username . " has commented on a picture you posted.";
 					$data[$count]['link'] = base_url() . "index.php/messaging/getThread/" . $picID;
+					$data[$count]['timestamp'] = $timestamp;
 					$count++;
 					break;
 				case 3 :
 					//message
 					$typeId = $val -> type_id;
-					if(!$this -> db -> query("SELECT users.id FROM users,messaging WHERE messaging.id=$typeId AND users.id=messaging.uid1") -> first_row()) break;
-					$data[$count]['userdata'] = $this -> getUserData($this -> db -> query("SELECT users.id FROM users,messaging WHERE messaging.id=$typeId AND users.id=messaging.uid1") -> first_row() -> id);
+					if(!$this -> db -> query("SELECT users.id FROM users, messaging WHERE messaging.id=$typeId AND users.id=messaging.uid1") -> first_row()) break;
+					$data[$count]['userdata'] = $this -> getUserData($this -> db -> query("SELECT users.id FROM users, messaging WHERE messaging.id=$typeId AND users.id=messaging.uid1") -> first_row() -> id);
 					if(!$data[$count]['userdata'])
 						break;
 					$data[$count]['stringit'] = $data[$count]['userdata']['userData'] -> username . " has messaged you.";
 					$data[$count]['link'] = base_url() . "index.php/messaging/getThread/" . $data[$count]['userdata']['userData'] -> id;
 					$data[$count]['messagedata'] = ($this -> db -> query("SELECT * FROM messaging WHERE messaging.id=$typeId") -> first_row());
-
+					$data[$count]['timestamp'] = $timestamp;
 					$count++;
 					break;
 				default :

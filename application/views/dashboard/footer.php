@@ -1,3 +1,6 @@
+<title>Red-Eye Photography</title>
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 				<div class="footer-spacer-pagination"></div>
 				<!-- start footer -->
 

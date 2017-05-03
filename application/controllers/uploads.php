@@ -8,10 +8,10 @@ class uploads extends CI_Controller{
         //redirect to login
         $loggedIn=  $this->session->userdata('logged_in');
         if(!isset($loggedIn)){
-            redirect('/welcome', 'refresh');
+            redirect('/login', 'refresh');
         }
         if(!$loggedIn){
-             redirect('/welcome', 'refresh');
+             redirect('/login', 'refresh');
         }
        $this->load->model('IPEModel');
     }
@@ -21,6 +21,72 @@ class uploads extends CI_Controller{
         $data['albums']=$this->IPEModel->getAlbums($this->session->userdata('id'));
         $this->template->write_view('content', 'upload', $data, TRUE);
     	$this->template->render();
+    }
+
+    public function admin(){
+    	if(!$this->IPEModel->isAdmin($this->session->userdata('id')))redirect('/welcome', 'refresh');
+    	$data = array();
+        $this->template->write_view('content', 'landing_pic', $data, TRUE);
+    	$this->template->render();
+    }
+    
+    public function landing1(){
+    		if(!$this->IPEModel->isAdmin($this->session->userdata('id')))redirect('/welcome', 'refresh');
+    		
+                $config['upload_path'] = './uploads/landing';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size']=0;
+                $config['overwrite']=FALSE;
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload()){
+			$data['error'] = array('uperror' => $this->upload->display_errors());
+                        $data['owner']=true;
+                        echo "E".$data['error']['uperror'];
+		}
+		else{
+	            $data = $this->upload->data();
+	            
+	            $newHeight=0;            
+	            $origWidth = $data['image_width'];
+	            $origHeight = $data['image_height'];
+	            
+	            if($origWidth>1024){
+	            $newWidth = 1024;
+	            $newHeight = $newWidth*$origHeight/$origWidth;
+	            }else{
+	            $newWidth = $origWidth;
+	            $newHeight = $newWidth*$origHeight/$origWidth; 
+	            }
+	            
+	            if($newHeight>1024){
+	            $newHeight = 1024;
+	            $newWidth = $newHeight*$origWidth/$origHeight;
+	            }  
+	            
+	            $resize = array(
+	                'image_library'=>'imagemagick',
+	                'library_path' => 'C:\imagemagick',
+	                'source_image'=>'./uploads/landing/'.$data['file_name'],
+	                'create_thumb' => FALSE,
+	                'maintain_ratio'=>TRUE,
+	                'quality' => '70%',
+	                'width'=>$newWidth,
+	                'height'=>$newHeight
+	            );
+	            $this->load->library('image_lib', $resize); 
+	            $data['image_width']=$newWidth;
+	            $data['image_height']=$newHeight;
+	            if(!$this->image_lib->resize());
+	            echo "S".json_encode($data);
+		}
+    }
+    
+    public function landing2(){
+    	if(!$this->IPEModel->isAdmin($this->session->userdata('id')))redirect('/welcome', 'refresh');
+        $data['error']="";
+        
+      	$this->IPEModel->changeLanding($_POST['filename']);             
+	redirect('/');
     }
     
     public function editImage($id){
@@ -51,7 +117,7 @@ class uploads extends CI_Controller{
         $this->cropImage($source_image, $target_image, $crop_area);
        
         $config2['image_library'] = 'imagemagick';
-        $config2['library_path'] = '/usr/bin';
+        $config2['library_path'] = 'C:\imagemagick';
         
          $config2['source_image'] = './uploads/images/thumbs/'.$_POST['filename'];
         $config2['width'] = 300;
@@ -85,7 +151,7 @@ class uploads extends CI_Controller{
         
         $arrData=  explode(',',$_POST['cropdata']);
         /*$config['image_library'] = 'imagemagick';
-        $config['library_path'] = '/usr/bin';
+        $config['library_path'] = 'C:\imagemagick';
         $config['source_image'] = './uploads/images/'.$_POST['filename'];
         $config['new_image'] = './uploads/images/thumbs/'.$_POST['filename'];
             $config['x_axis']=$arrData[0];$config3['x_axis']=$arrData[0];
@@ -107,7 +173,7 @@ class uploads extends CI_Controller{
         $this->cropImage($source_image, $target_image, $crop_area);
        
         $config2['image_library'] = 'imagemagick';
-        $config2['library_path'] = '/usr/bin';
+        $config2['library_path'] = 'C:\imagemagick';
         
          $config2['source_image'] = './uploads/images/thumbs/'.$_POST['filename'];
         $config2['width'] = 300;
@@ -239,7 +305,7 @@ class uploads extends CI_Controller{
             
             $resize = array(
                 'image_library'=>'imagemagick',
-                'library_path' => '/usr/bin',
+                'library_path' => 'C:\imagemagick',
                 'source_image'=>'./uploads/images/'.$data['file_name'],
                 'create_thumb' => FALSE,
                 'maintain_ratio'=>TRUE,

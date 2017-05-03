@@ -3,7 +3,7 @@ h2
 	color: #999;
 	margin-bottom: 0; 
 	margin-left:13px;
-	background: #ffffff;
+	background:url(navigation.jpg) no-repeat;
 	height:40px;
 }
 
@@ -54,14 +54,14 @@ ul#sliding-navigation li.sliding-element a
 ul#sliding-navigation li.sliding-element h3
 {
 	color: #fff;
-	background:#333;
+	background:#333 url(heading_bg.jpg) repeat-y;
 	font-weight: normal;
 }
 
 ul#sliding-navigation li.sliding-element a
 {
 	color: #999;
-	background:#222;
+	background:#222 url(tab_bg.jpg) repeat-y;
 	border: 1px solid #1a1a1a;
 	text-decoration: none;
 }

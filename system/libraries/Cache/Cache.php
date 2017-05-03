@@ -1,183 +1,216 @@
-﻿/*
-Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.html or http://ckeditor.com/license
-*/
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 4.3.2 or newer
+ *
+ * @package		CodeIgniter
+ * @author		ExpressionEngine Dev Team
+ * @copyright	Copyright (c) 2006 - 2012 EllisLab, Inc.
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 2.0
+ * @filesource	
+ */
 
-CKEDITOR.plugins.add( 'listblock',
-{
-	requires : [ 'panel' ],
+// ------------------------------------------------------------------------
 
-	onLoad : function()
+/**
+ * CodeIgniter Caching Class 
+ *
+ * @package		CodeIgniter
+ * @subpackage	Libraries
+ * @category	Core
+ * @author		ExpressionEngine Dev Team
+ * @link		
+ */
+class CI_Cache extends CI_Driver_Library {
+	
+	protected $valid_drivers 	= array(
+		'cache_apc', 'cache_file', 'cache_memcached', 'cache_dummy'
+	);
+
+	protected $_cache_path		= NULL;		// Path of cache files (if file-based cache)
+	protected $_adapter			= 'dummy';
+	protected $_backup_driver;
+	
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Constructor
+	 *
+	 * @param array
+	 */
+	public function __construct($config = array())
 	{
-		CKEDITOR.ui.panel.prototype.addListBlock = function( name, definition )
+		if ( ! empty($config))
 		{
-			return this.addBlock( name, new CKEDITOR.ui.listBlock( this.getHolderElement(), definition ) );
-		};
+			$this->_initialize($config);
+		}
+	}
 
-		CKEDITOR.ui.listBlock = CKEDITOR.tools.createClass(
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Get 
+	 *
+	 * Look for a value in the cache.  If it exists, return the data 
+	 * if not, return FALSE
+	 *
+	 * @param 	string	
+	 * @return 	mixed		value that is stored/FALSE on failure
+	 */
+	public function get($id)
+	{	
+		return $this->{$this->_adapter}->get($id);
+	}
+
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Cache Save
+	 *
+	 * @param 	string		Unique Key
+	 * @param 	mixed		Data to store
+	 * @param 	int			Length of time (in seconds) to cache the data
+	 *
+	 * @return 	boolean		true on success/false on failure
+	 */
+	public function save($id, $data, $ttl = 60)
+	{
+		return $this->{$this->_adapter}->save($id, $data, $ttl);
+	}
+
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Delete from Cache
+	 *
+	 * @param 	mixed		unique identifier of the item in the cache
+	 * @return 	boolean		true on success/false on failure
+	 */
+	public function delete($id)
+	{
+		return $this->{$this->_adapter}->delete($id);
+	}
+
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Clean the cache
+	 *
+	 * @return 	boolean		false on failure/true on success
+	 */
+	public function clean()
+	{
+		return $this->{$this->_adapter}->clean();
+	}
+
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Cache Info
+	 *
+	 * @param 	string		user/filehits
+	 * @return 	mixed		array on success, false on failure	
+	 */
+	public function cache_info($type = 'user')
+	{
+		return $this->{$this->_adapter}->cache_info($type);
+	}
+
+	// ------------------------------------------------------------------------
+	
+	/**
+	 * Get Cache Metadata
+	 *
+	 * @param 	mixed		key to get cache metadata on
+	 * @return 	mixed		return value from child method
+	 */
+	public function get_metadata($id)
+	{
+		return $this->{$this->_adapter}->get_metadata($id);
+	}
+	
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Initialize
+	 *
+	 * Initialize class properties based on the configuration array.
+	 *
+	 * @param	array 	
+	 * @return 	void
+	 */
+	private function _initialize($config)
+	{        
+		$default_config = array(
+				'adapter',
+				'memcached'
+			);
+
+		foreach ($default_config as $key)
+		{
+			if (isset($config[$key]))
 			{
-				base : CKEDITOR.ui.panel.block,
+				$param = '_'.$key;
 
-				$ : function( blockHolder, blockDefinition )
-				{
-					blockDefinition = blockDefinition || {};
+				$this->{$param} = $config[$key];
+			}
+		}
 
-					var attribs = blockDefinition.attributes || ( blockDefinition.attributes = {} );
-					( this.multiSelect = !!blockDefinition.multiSelect ) &&
-						( attribs[ 'aria-multiselectable' ] = true );
-					// Provide default role of 'listbox'.
-					!attribs.role && ( attribs.role = 'listbox' );
+		if (isset($config['backup']))
+		{
+			if (in_array('cache_'.$config['backup'], $this->valid_drivers))
+			{
+				$this->_backup_driver = $config['backup'];
+			}
+		}
+	}
 
-					// Call the base contructor.
-					this.base.apply( this, arguments );
+	// ------------------------------------------------------------------------
 
-					var keys = this.keys;
-					keys[ 40 ]	= 'next';					// ARROW-DOWN
-					keys[ 9 ]	= 'next';					// TAB
-					keys[ 38 ]	= 'prev';					// ARROW-UP
-					keys[ CKEDITOR.SHIFT + 9 ]	= 'prev';	// SHIFT + TAB
-					keys[ 32 ]	= 'click';					// SPACE
+	/**
+	 * Is the requested driver supported in this environment?
+	 *
+	 * @param 	string	The driver to test.
+	 * @return 	array
+	 */
+	public function is_supported($driver)
+	{
+		static $support = array();
 
-					this._.pendingHtml = [];
-					this._.items = {};
-					this._.groups = {};
-				},
+		if ( ! isset($support[$driver]))
+		{
+			$support[$driver] = $this->{$driver}->is_supported();
+		}
 
-				_ :
-				{
-					close : function()
-					{
-						if ( this._.started )
-						{
-							this._.pendingHtml.push( '</ul>' );
-							delete this._.started;
-						}
-					},
+		return $support[$driver];
+	}
 
-					getClick : function()
-					{
-						if ( !this._.click )
-						{
-							this._.click = CKEDITOR.tools.addFunction( function( value )
-								{
-									var marked = true;
+	// ------------------------------------------------------------------------
 
-									if ( this.multiSelect )
-										marked = this.toggle( value );
-									else
-										this.mark( value );
+	/**
+	 * __get()
+	 *
+	 * @param 	child
+	 * @return 	object
+	 */
+	public function __get($child)
+	{
+		$obj = parent::__get($child);
 
-									if ( this.onClick )
-										this.onClick( value, marked );
-								},
-								this );
-						}
-						return this._.click;
-					}
-				},
+		if ( ! $this->is_supported($child))
+		{
+			$this->_adapter = $this->_backup_driver;
+		}
 
-				proto :
-				{
-					add : function( value, html, title )
-					{
-						var pendingHtml = this._.pendingHtml,
-							id = 'cke_' + CKEDITOR.tools.getNextNumber();
+		return $obj;
+	}
+	
+	// ------------------------------------------------------------------------
+}
+// End Class
 
-						if ( !this._.started )
-						{
-							pendingHtml.push( '<ul role="presentation" class=cke_panel_list>' );
-							this._.started = 1;
-							this._.size = this._.size || 0;
-						}
-
-						this._.items[ value ] = id;
-
-						pendingHtml.push(
-							'<li id=', id, ' class=cke_panel_listItem>' +
-								'<a id="', id, '_option" _cke_focus=1 hidefocus=true' +
-									' title="', title || value, '"' +
-									' href="javascript:void(\'', value, '\')"' +
-									' onclick="CKEDITOR.tools.callFunction(', this._.getClick(), ',\'', value, '\'); return false;"',
-									' role="option"' +
-									' aria-posinset="' + ++this._.size + '">',
-									html || value,
-								'</a>' +
-							'</li>' );
-					},
-
-					startGroup : function( title )
-					{
-						this._.close();
-
-						var id = 'cke_' + CKEDITOR.tools.getNextNumber();
-
-						this._.groups[ title ] = id;
-
-						this._.pendingHtml.push( '<h1 role="presentation" id=', id, ' class=cke_panel_grouptitle>', title, '</h1>' );
-					},
-
-					commit : function()
-					{
-						this._.close();
-						this.element.appendHtml( this._.pendingHtml.join( '' ) );
-
-						var items = this._.items,
-							doc = this.element.getDocument();
-						for ( var value in items )
-							doc.getById( items[ value ] + '_option' ).setAttribute( 'aria-setsize', this._.size );
-						delete this._.size;
-
-						this._.pendingHtml = [];
-					},
-
-					toggle : function( value )
-					{
-						var isMarked = this.isMarked( value );
-
-						if ( isMarked )
-							this.unmark( value );
-						else
-							this.mark( value );
-
-						return !isMarked;
-					},
-
-					hideGroup : function( groupTitle )
-					{
-						var group = this.element.getDocument().getById( this._.groups[ groupTitle ] ),
-							list = group && group.getNext();
-
-						if ( group )
-						{
-							group.setStyle( 'display', 'none' );
-
-							if ( list && list.getName() == 'ul' )
-								list.setStyle( 'display', 'none' );
-						}
-					},
-
-					hideItem : function( value )
-					{
-						this.element.getDocument().getById( this._.items[ value ] ).setStyle( 'display', 'none' );
-					},
-
-					showAll : function()
-					{
-						var items = this._.items,
-							groups = this._.groups,
-							doc = this.element.getDocument();
-
-						for ( var value in items )
-						{
-							doc.getById( items[ value ] ).setStyle( 'display', '' );
-						}
-
-						for ( var title in groups )
-						{
-							var group = doc.getById( groups[ title ] ),
-								list = group.getNext();
-
-							group.setStyle( 'display', '' );
-
-							if ( list && list.getName() == 'ul' )
-								list.setStyle( 
+/* End of file Cache.php */
+/* Location: ./system/libraries/Cache/Cache.php */

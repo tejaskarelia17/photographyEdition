@@ -550,6 +550,7 @@ class CI_Template {
       // Just render $region if supplied
       if ($region) // Display a specific regions contents
       {
+		 
          if (isset($this->regions[$region]))
          {
             $output = $this->_build_content($this->regions[$region]);
@@ -563,6 +564,7 @@ class CI_Template {
       // Build the output array
       else
       {
+		   
          foreach ($this->regions as $name => $region)
          {
             $this->output[$name] = $this->_build_content($region);
@@ -582,11 +584,14 @@ class CI_Template {
          else
          {
             // Use CI's loader class to render the template with our output array
+			
             $output = $this->CI->load->view($this->master, $this->output, $buffer);
+			
          }
       }
       
       return $output;
+	  
    }
    
    // --------------------------------------------------------------------

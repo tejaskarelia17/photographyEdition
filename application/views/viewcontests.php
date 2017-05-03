@@ -1,3 +1,4 @@
+<title>Red-Eye Photography</title>
 <section class="slab pb20">
   <div class="row">
          <div class="twelve mobile-four columns pt20">

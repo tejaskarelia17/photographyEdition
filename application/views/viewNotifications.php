@@ -1,4 +1,6 @@
 <?php foreach ($data as $value): ?>
+<title>Red-Eye Photography</title>
+
 
 <section class="services">
 <div class="row">

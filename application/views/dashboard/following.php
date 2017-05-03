@@ -1,17 +1,21 @@
 <?php $this -> load -> view('dashboard/header');
 $this -> load -> model('dashboard_model');
 $letters = array(); ?>
+<title>Red-Eye Photography</title>
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
+
 
 <div class="ten columns">
 	<div style="padding-top:20px;" class="row">
-		<h1 style="font-size:24px">Following</h1>
+		<h1 style="font-size:24px;color:black">Following</h1>
 		<br>
 		<?php foreach(range('A','Z') as $letter) : ?>
 			<?php if($result = $this->dashboard_model->getFollowing($letter)) : ?>
 			<table class="table2" border="0" cellspacing="0" cellpadding="2" style="border:none;">
 				<tr>
 					<a name="<?php echo $letter ?>">
-					<div style="color:rgba(255,255,255,1); padding-top:70px; font-size:24px">
+					<div style="color:black; padding-top:70px; font-size:24px">
 						<?php echo $letter ?>
 					</div>
 					<hr>
@@ -29,8 +33,8 @@ $letters = array(); ?>
 							<img style="border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px;height:100px;width:100px" src="<?php echo base_url() ?>uploads/userProfile/<?php echo $row -> profileImage; ?>">
 						</a>
 					</td>
-					<td width="16.67%" style="float:left;color:rgba(255,255,255,1); padding-top:25px">
-						<a style="color:rgba(255,255,255,1);" href="<?php echo base_url() ?>index.php/profile/view/<?php echo $row -> id; ?>">
+					<td width="16.67%" style="float:left;color:black; padding-top:25px">
+						<a style="color:black" href="<?php echo base_url() ?>index.php/profile/view/<?php echo $row -> id; ?>">
 							<?php echo $row -> username; ?>
 						</a>
 					</td>

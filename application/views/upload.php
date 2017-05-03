@@ -1,3 +1,5 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <script type="text/javascript" src="<?php echo base_url()?>js/jquery.form.js"></script>
 <script src="<?php echo base_url()?>/js/crop/jquery.Jcrop.js"></script>
 <link rel="stylesheet" href="<?php echo base_url()?>js/crop/jquery.Jcrop.css" type="text/css" />
@@ -118,34 +120,34 @@ var obj;
 
       </form>
       <form class="custom" method="post" action="<?php echo base_url('index.php/uploads/formsubmit/'); ?>"  id="uploadForm">
-          <label>Photo Title :</label>
-              <input style="background-color:#494949; border-color:#494949" name="title" type="text" placeholder="Photo Title"/>
+          <label style="color:black">Photo Title :</label>
+              <input style="background-color:#EBEDFA;" name="title" type="text" placeholder="Photo Title"/>
             
-              <label>Description:</label>
-              <textarea style="background-color:#494949; border-color:#494949;width:228px; height:150px;" name="description" placeholder="Description" ros="4" cols="50" style="margin: 0px 78px 5px 0px;"></textarea>
-          <label>Camera :</label>
-            <input style="background-color:#494949;border-color:#494949" type="text" name="camera"  placeholder="Camera" />
-            <label>Albums :</label>
-            <select style="background-color:#494949; border-color:#494949" name="albums" id="albums">
+              <label style="color:black">Description:</label>
+              <textarea style="background-color:#EBEDFA;;width:228px; height:150px;" name="description" placeholder="Description" ros="4" cols="50" style="margin: 0px 78px 5px 0px;"></textarea>
+          <label style="color:black">Camera :</label>
+            <input style="background-color:#EBEDFA" type="text" name="camera"  placeholder="Camera" />
+            <label style="color:black">Albums :</label>
+            <select style="background-color:#EBEDFA;border-color:#EBEDFA" name="albums" id="albums">
             <?php foreach ($albums as $value):?>
-                <option id="customDropdown" style="background-color:#494949; border-color:#494949; height:25px;" value="<?php echo $value->id?>"><?php echo $value->name?></option>
+                <option id="customDropdown" style="background-color:#EBEDFA;; height:25px;" value="<?php echo $value->id?>"><?php echo $value->name?></option>
             <?php endforeach;?>
                 <option value="-1">Create New Album</option>
             </select><br><br>
-              <input style="background-color:#494949; border-color:#494949" type="text" name="albumText" placeholder="New Album Name" id="albumText" style="display:<?php if(count($albums)==0) echo "block";else echo "none"?>"/>
+              <input style="background-color:#EBEDFA;border-color:#EBEDFA" type="text" name="albumText" placeholder="New Album Name" id="albumText" style="display:<?php if(count($albums)==0) echo "block";else echo "none"?>"/>
 
-            <label>Category</label>
-            <select style="background-color:#494949; border-color:#494949; height:25px;" name="category">
+            <label style="color:black">Category</label>
+            <select style="background-color:#EBEDFA;border-color:#EBEDFA;height:25px;" name="category">
             <?php foreach ($categories as $value):?>
-                <option style="background-color:#494949; border-color:#494949; height:25px;" value="<?php echo $value->id?>"><?php echo $value->name?></option>
+                <option style="background-color:#EBEDFA;; height:25px;" value="<?php echo $value->id?>"><?php echo $value->name?></option>
             <?php endforeach;?>
             </select>
             <br><br>
-              <label>Tags :</label>
-                <input style="background-color:#494949; border-color:#494949" type="text" placeholder="Tags" name="tags"/>
+              <label style="color:black">Tags :</label>
+                <input style="background-color:#EBEDFA;" type="text" placeholder="Tags" name="tags"/>
 
-              <input style="background-color:#494949; border-color:#494949" type='hidden' value='' name="filename" id="filename"/>
-              <input style="background-color:#494949; border-color:#494949" type='hidden' value='0,0,300,300' name="cropdata" id="cropdata"/>
+              <input style="background-color:#EBEDFA;" type='hidden' value='' name="filename" id="filename"/>
+              <input style="background-color:#EBEDFA;" type='hidden' value='0,0,300,300' name="cropdata" id="cropdata"/>
               <br>
             <input type="submit" class="push socle" id="magicsavebtn" style="display: none;width:100px" value="Save"/>
             <div class="error" style="color: #e40000;font-size: 2em">
@@ -156,11 +158,11 @@ var obj;
 
   <div class="ten mobile-four columns">
                  <div style="margin-left:30px;overflow: hidden" id="barge">
-                        <div class="bar" style="background:#fff"></div >
-                <div class="percent" style="font-size:3em;margin-left:45%;color: #fff;opacity:0.0">0%</div>
+                        <div class="bar" style="background:#000"></div >
+                <div class="percent" style="font-size:3em;margin-left:45%;color: #000;opacity:0.0">0%</div>
                 <img class="target" src="<?php echo base_url().'images/ipe.png'?>" style="width:450px;height:auto;margin-left:27%;opacity:1.0;">
     </div>
-  <p><label>Recent Uploads</p></label>
+  <p><label style="color:black">Recent Uploads</p></label>
 <div id="imageTable" style="background:#000" style="width:95%;padding-left:250px">
 </div>    
         </div>

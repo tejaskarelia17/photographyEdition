@@ -1,114 +1,203 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="frmViewFeedback" Codebehind="frmViewFeedback.aspx.cs" %>
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.1.6 or newer
+ *
+ * @package		CodeIgniter
+ * @author		ExpressionEngine Dev Team
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 1.0
+ * @filesource
+ */
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+// ------------------------------------------------------------------------
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Admin Feed Back</title>
-    <style type="text/css">
-        html
-        {
-            background: url(images/1.jpg) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            
-            width: 100%;
-            height: 100%;
-        }
-        .style1
-        {
-            width: 100%;
-            color: #FFFFFF;
-        }
-        .style2
-        {
-            width: 87px;
-        }
-        .style3
-        {
-            width: 1058px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-        <table class="style1">
-            <tr>
-                <td class="style2">
-                    &nbsp;</td>
-                <td class="style3">
-                    <asp:Label ID="Label1" runat="server" 
-                        style="font-size: xx-large; font-weight: 700; color: #FFFFFF" 
-                        Text="All Feedback"></asp:Label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Image ID="Image1" runat="server" Height="69px" Width="493px" 
-                        src="images/Road.png" />
-                    <br />
-                    <br />
-                <asp:LinkButton ID="lnklogout" runat="server" 
-                        onclick="LinkButton1_Click" CssClass="style1">Logout</asp:LinkButton>
-                    <br />
-                    <br />
-                    <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click1" 
-                        style="color: #FFFFFF">Back</asp:LinkButton>
-                    <br />
-                    <br />
-                    <br />
-                    Login feed back</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td class="style2">
-                    &nbsp;</td>
-                <td class="style3" valign="top">
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-                        CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" 
-                        GridLines="None" Width="1056px">
-                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                        <Columns>
-                            <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-                            <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-                            <asp:BoundField DataField="subject" HeaderText="subject" 
-                                SortExpression="subject" />
-                            <asp:BoundField DataField="message" HeaderText="message" 
-                                SortExpression="message" />
-                        </Columns>
-                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                        <EditRowStyle BackColor="#999999" />
-                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                    </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                        ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-                        SelectCommand="SELECT * FROM [Feedback]"></asp:SqlDataSource>
-                </td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td class="style2">
-                    &nbsp;</td>
-                <td class="style3">
-                    <br />
-                    <br />
-                    Website feed back<br />
-                    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
-                        CellPadding="4" DataSourceID="SqlDataSource4" ForeColor="#333333" 
-                        GridLines="None">
-                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                        <Columns>
-                            <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-                            <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-                            <asp:BoundField DataField="subject" HeaderText="subject" 
-                                SortExpression="subject" />
-                            <asp:BoundField DataField="message" HeaderText="message" 
-                                SortExpression="message" />
-                        </Columns>
-                        <EditRowStyle BackColor="#999999" />
-        
+/**
+ * CodeIgniter Inflector Helpers
+ *
+ * @package		CodeIgniter
+ * @subpackage	Helpers
+ * @category	Helpers
+ * @author		ExpressionEngine Dev Team
+ * @link		http://codeigniter.com/user_guide/helpers/directory_helper.html
+ */
+
+
+// --------------------------------------------------------------------
+
+/**
+ * Singular
+ *
+ * Takes a plural word and makes it singular
+ *
+ * @access	public
+ * @param	string
+ * @return	str
+ */
+if ( ! function_exists('singular'))
+{
+	function singular($str)
+	{
+		$result = strval($str);
+
+		$singular_rules = array(
+			'/(matr)ices$/'         => '\1ix',
+			'/(vert|ind)ices$/'     => '\1ex',
+			'/^(ox)en/'             => '\1',
+			'/(alias)es$/'          => '\1',
+			'/([octop|vir])i$/'     => '\1us',
+			'/(cris|ax|test)es$/'   => '\1is',
+			'/(shoe)s$/'            => '\1',
+			'/(o)es$/'              => '\1',
+			'/(bus|campus)es$/'     => '\1',
+			'/([m|l])ice$/'         => '\1ouse',
+			'/(x|ch|ss|sh)es$/'     => '\1',
+			'/(m)ovies$/'           => '\1\2ovie',
+			'/(s)eries$/'           => '\1\2eries',
+			'/([^aeiouy]|qu)ies$/'  => '\1y',
+			'/([lr])ves$/'          => '\1f',
+			'/(tive)s$/'            => '\1',
+			'/(hive)s$/'            => '\1',
+			'/([^f])ves$/'          => '\1fe',
+			'/(^analy)ses$/'        => '\1sis',
+			'/((a)naly|(b)a|(d)iagno|(p)arenthe|(p)rogno|(s)ynop|(t)he)ses$/' => '\1\2sis',
+			'/([ti])a$/'            => '\1um',
+			'/(p)eople$/'           => '\1\2erson',
+			'/(m)en$/'              => '\1an',
+			'/(s)tatuses$/'         => '\1\2tatus',
+			'/(c)hildren$/'         => '\1\2hild',
+			'/(n)ews$/'             => '\1\2ews',
+			'/([^u])s$/'            => '\1',
+		);
+		
+		foreach ($singular_rules as $rule => $replacement)
+		{
+			if (preg_match($rule, $result))
+			{
+				$result = preg_replace($rule, $replacement, $result);
+				break;
+			}
+		}
+
+		return $result;
+	}
+}
+
+// --------------------------------------------------------------------
+
+/**
+ * Plural
+ *
+ * Takes a singular word and makes it plural
+ *
+ * @access	public
+ * @param	string
+ * @param	bool
+ * @return	str
+ */
+if ( ! function_exists('plural'))
+{
+	function plural($str, $force = FALSE)
+	{
+		$result = strval($str);
+	
+		$plural_rules = array(
+			'/^(ox)$/'                 => '\1\2en',     // ox
+			'/([m|l])ouse$/'           => '\1ice',      // mouse, louse
+			'/(matr|vert|ind)ix|ex$/'  => '\1ices',     // matrix, vertex, index
+			'/(x|ch|ss|sh)$/'          => '\1es',       // search, switch, fix, box, process, address
+			'/([^aeiouy]|qu)y$/'       => '\1ies',      // query, ability, agency
+			'/(hive)$/'                => '\1s',        // archive, hive
+			'/(?:([^f])fe|([lr])f)$/'  => '\1\2ves',    // half, safe, wife
+			'/sis$/'                   => 'ses',        // basis, diagnosis
+			'/([ti])um$/'              => '\1a',        // datum, medium
+			'/(p)erson$/'              => '\1eople',    // person, salesperson
+			'/(m)an$/'                 => '\1en',       // man, woman, spokesman
+			'/(c)hild$/'               => '\1hildren',  // child
+			'/(buffal|tomat)o$/'       => '\1\2oes',    // buffalo, tomato
+			'/(bu|campu)s$/'           => '\1\2ses',    // bus, campus
+			'/(alias|status|virus)/'   => '\1es',       // alias
+			'/(octop)us$/'             => '\1i',        // octopus
+			'/(ax|cris|test)is$/'      => '\1es',       // axis, crisis
+			'/s$/'                     => 's',          // no change (compatibility)
+			'/$/'                      => 's',
+		);
+
+		foreach ($plural_rules as $rule => $replacement)
+		{
+			if (preg_match($rule, $result))
+			{
+				$result = preg_replace($rule, $replacement, $result);
+				break;
+			}
+		}
+
+		return $result;
+	}
+}
+
+// --------------------------------------------------------------------
+
+/**
+ * Camelize
+ *
+ * Takes multiple words separated by spaces or underscores and camelizes them
+ *
+ * @access	public
+ * @param	string
+ * @return	str
+ */
+if ( ! function_exists('camelize'))
+{
+	function camelize($str)
+	{
+		$str = 'x'.strtolower(trim($str));
+		$str = ucwords(preg_replace('/[\s_]+/', ' ', $str));
+		return substr(str_replace(' ', '', $str), 1);
+	}
+}
+
+// --------------------------------------------------------------------
+
+/**
+ * Underscore
+ *
+ * Takes multiple words separated by spaces and underscores them
+ *
+ * @access	public
+ * @param	string
+ * @return	str
+ */
+if ( ! function_exists('underscore'))
+{
+	function underscore($str)
+	{
+		return preg_replace('/[\s]+/', '_', strtolower(trim($str)));
+	}
+}
+
+// --------------------------------------------------------------------
+
+/**
+ * Humanize
+ *
+ * Takes multiple words separated by underscores and changes them to spaces
+ *
+ * @access	public
+ * @param	string
+ * @return	str
+ */
+if ( ! function_exists('humanize'))
+{
+	function humanize($str)
+	{
+		return ucwords(preg_replace('/[_]+/', ' ', strtolower(trim($str))));
+	}
+}
+
+
+/* End of file inflector_helper.php */
+/* Location: ./system/helpers/inflector_helper.php */

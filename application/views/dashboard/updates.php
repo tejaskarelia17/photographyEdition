@@ -1,6 +1,9 @@
 <?php $this -> load -> view('dashboard/header'); ?>
+<title>Red-Eye Photography</title>
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 
-<div class="row2" style="background-color:#333">
+
+<div class="row2" style="background-color: #FFF">
 
 <div class="nine columns" style="border:none; overflow:hidden; background-color:transparent;">
 	<?php /*
@@ -16,7 +19,7 @@
 	*/ ?>
 	
 	
-		<section class="services" style="background-color:#333;margin-top:-50px">
+		<section class="services" style="background-color:#FFF;margin-top:-50px">
 			<?php foreach ($data as $value): ?>
 			<div class="row">
 				<div class="three mobile-four columns text-center" style="margin-left:-80px">
@@ -33,7 +36,7 @@
 			<div class="ten columns">			
 				<p>
 					<span class="drop" style="margin-left:-40px;">&ldquo;</span>
-					<a style="color:#999; margin-left:-20px; text-decoration:none" href="<?php echo $value['link']?>">
+					<a style="color:black; margin-left:-20px; text-decoration:none" href="<?php echo $value['link']?>">
 						<?php echo $value['stringit']?>
 					</a>
 				</p>
@@ -64,11 +67,11 @@
 	<?php foreach($result1 as $row):?>
 	<br>
 	<a style="margin-top:50px;" href="<?php echo base_url()?>index.php/news/newsitem/<?php echo $row->id?>">
-		<h2 style="font-size:20px;margin-top:-20px;color:#CCC;"><?php echo $row->title ?></h2>
+		<h2 style="font-size:20px;margin-top:-20px;color:black;"><?php echo $row->title ?></h2>
 	</a>
-	<p class="leadwhite" style="color:#999; margin-top:40px"><?php echo $this->IPEModel->replace_links(substr($row->message,0,200));if(strlen($row->message)>201)echo "<a href=".base_url()."index.php/news/newsitem/".$row->id."><font color='yellow'>...Read More</font></a>"?></p>
+	<p style="color:black; margin-top:40px"><?php echo $this->IPEModel->replace_links(substr($row->message,0,200));if(strlen($row->message)>201)echo "<a href=".base_url()."index.php/news/newsitem/".$row->id."><font color='blue'>...Read More</font></a>"?></p>
 	<br>
-	<hr style="margin-top:-10px;border-top: 10px solid #FFF;">
+	<hr style="margin-top:-10px;border-top: 10px solid #000;">
 	<?php endforeach; ?>
 
 </div>

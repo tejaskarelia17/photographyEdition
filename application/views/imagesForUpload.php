@@ -1,3 +1,4 @@
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <style>
     .boxgrid{  
     width: 196px;  
@@ -86,7 +87,8 @@
     <?php if($count==6){
         $count=0;
     }?>
-        <div class="boxgrid">
+        <title>Red-Eye Photography</title>
+<div class="boxgrid">
         <a href="<?php echo base_url()?>index.php/view/photo/<?php echo $img->id?>">
             <img class="magic" src="<?php echo base_url()."uploads/images/thumbs/". $img->location?>" />
         </a>

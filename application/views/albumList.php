@@ -1,3 +1,5 @@
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 <style type="text/css">
     
 
@@ -52,7 +54,7 @@ body,td,th {
 	color: #41B4D4;
 }
 a:link {
-	color:rgba(153,153,153,1);
+	color:black;
 }
 a:visited {
 	color:rgba(153,153,153,1);
@@ -86,12 +88,14 @@ a:visited {
 
 
 
-<section class="recent portfolio" style="background:black">
+<title>Red-Eye Photography</title>
+
+<section class="recent portfolio" style="background:white">
     
       <div class="row mb20" style="margin-top:20px">
 <a href="<?php echo base_url()?>index.php/view/albumgallery/<?php echo $id?>" class="push socle" style="margin-left:10px;color:white">Link to Gallery</a><br><br>
     <?php foreach ($data as $v):?>
-  <table width="600" style="background:black;border: none;" cellspacing="0px">
+  <table width="600" style="background:white;border: none;" cellspacing="0px">
 
   <tr>
     <td>
@@ -105,24 +109,24 @@ a:visited {
     </div> 
     </td>
     <td width="860">
-        <table width="600" style="background:black;border: none;" border="0" align="left">
+        <table width="600" style="background:white;border: none;" border="0" align="left">
   <tr style="background:#222;border: none;">
-    <td width="121" style="color:white;background:black">Album Name:</td>
-    <td width="258" style="color:white;background:black"><a href="<?php echo base_url()?>index.php/view/album/<?php echo $v->id?>"><?php echo $v->name?></a></td>
-<td height="18" style="color:white;background:black">Created  on:</td>
-    <td style="color:white;background:black"><?php echo date('d F, Y',  strtotime($v->time))?></td>
+    <td width="121" style="color:black;background:white">Album Name:</td>
+    <td width="258" style="color:black;background:white"><a href="<?php echo base_url()?>index.php/view/album/<?php echo $v->id?>"><?php echo $v->name?></a></td>
+<td height="18" style="color:black;background:white">Created  on:</td>
+    <td style="color:black;background:white"><?php echo date('d F, Y',  strtotime($v->time))?></td>
 
   </tr>
-  <tr style="background:black;border: none;">
-    <td style="color:white;">Total Photos:</td>
-    <td style="color:white;"><?php echo $v->albumStuff['count']?></td>
+  <tr style="background:white;border: none;">
+    <td style="color:black">Total Photos:</td>
+    <td style="color:black;"><?php echo $v->albumStuff['count']?></td>
 <td colspan="2"><a href="<?php echo base_url()?>index.php/gallery/index/<?php echo $v->id?>" class="push socle" style="color:white">Slideshow</a></td>
   </tr>
-  <tr style="background:black;border: none;">
-    <td style="color:white;">Total Stars:</td>
-    <td style="color:white;"><?php echo $v->albumStuff['stars']?></td><td colspan="2" ><a class="push socle left" href="<?php echo base_url()?>index.php/view/changeAlbumCover/<?php echo $v->id?>" style="color:white">Change Display Pic</a></td>
+  <tr style="background:white;border: none;">
+    <td style="color:black;">Total Stars:</td>
+    <td style="color:black;"><?php echo $v->albumStuff['stars']?></td><td colspan="2" ><a class="push socle left" href="<?php echo base_url()?>index.php/view/changeAlbumCover/<?php echo $v->id?>" style="color:white">Change Display Pic</a></td>
   </tr>
-  <tr style="background:black;border: none; text-align:right;"> 
+  <tr style="background:white;border: none; text-align:right;"> 
 <td></td><td></td>
     <td colspan="2" align="right"><a class="push socle" href="<?php echo base_url()?>index.php/view/deleteAlbum/<?php echo $v->id?>" style="color:white">Delete Album</a></td>
   </tr>

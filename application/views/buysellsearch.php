@@ -1,3 +1,6 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
 <?php
 
 /*
@@ -37,7 +40,7 @@
 }
 .linkk:hover
 {
-	color:rgba(255,255,255,1);
+	color:Black;
 }
 </style>
 <style>
@@ -56,26 +59,27 @@
         margin-bottom: 10px;
     }
 </style>
+<title>Red-Eye Photography</title>
 <section class="row2"><div class="row"">
  <form style="padding:5px;margin-top:15px;" action="<?php echo base_url()?>index.php/buysell/search" method="GET">
         <table class="table2" border="1" cellspacing="0" cellpadding="0">
     <tr>
       	<td width="33%">
-      		<label>Category :(camera,lens,equipment)</label>
+      		<label style="color:black"> Category :(camera,lens,equipment)</label>
   		<input type="text" placeholder="Item" name="search" value="<?php echo $search?>">
   		<input type="submit" style="width:200px" class="push socle" value="Search"/>
   	</td>
       	<td width="33%">
-      		<label>Price(Don't add commas in between) From :</label>
+      		<label style="color:black"> Price(Don't add commas in between) From :</label>
   		<input type="text" placeholder="Minimum" value="<?php echo $min?>" name="minimum"/>
-  		<label> Model </label>
+  		<label style="color:black"> Model </label>
       		<input type="text" placeholder="Model" name="model" value="<?php echo $model?>"/>
   	</td>
       	<td width="33%">
-<label> To </label>
+<label style="color:black"> To </label>
   		<input type="text" placeholder="Maximum" value="<?php echo $max?>" name="maximum"/>
       		
-      		<label> Place </label>
+      		<label style="color:black"> Place </label>
       		<input type="text" placeholder="Place" name="place" value="<?php echo $place?>"/>
       	</td>
     </tr>
@@ -91,20 +95,20 @@
 
 <table width="1330" height="51" border="0" class="table2" style="border:none">
   <tr style="border-bottom:thick;border-bottom:rgba(255,255,255,1);">
-  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:aqua" width="5%">Sr.<hr></td>
-  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:aqua" width="15%">Image<hr></td>
- <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:aqua" width="14%">Model<hr></td>
-  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:aqua" width="27%">Description<hr></td>
-  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:aqua" width="9%">Owner<hr></td>
-  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:aqua" width="9%">Date<hr></td>
-  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:aqua" width="12%">Contact<hr></td>
-  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:aqua" width="7%">Location<hr></td>
-  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:aqua" width="15%">Price<hr></td>
+  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:black" width="5%">Sr.<hr></td>
+  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:black" width="15%">Image<hr></td>
+ <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:black" width="14%">Model<hr></td>
+  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:black" width="27%">Description<hr></td>
+  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:black" width="9%">Owner<hr></td>
+  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:black" width="9%">Date<hr></td>
+  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:black" width="12%">Contact<hr></td>
+  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:black" width="7%">Location<hr></td>
+  <td style="border-bottom:thick;border-bottom:rgba(255,255,255,1);color:black" width="15%">Price<hr></td>
 
   </tr>
   <?php $count=1;foreach ($data as $value):?>
-  <tr style="background-color:black;">
-      <td style="color:white;"><?php echo $count++?></td>
+  <tr style="background-color:white;">
+      <td style="color:black;"><?php echo $count++?></td>
       <?php if($value->pic_loc!=null):?>
       <td><img src="<?php echo base_url()?>uploads/buysell/<?php echo $value->pic_loc?>" height="200" width="200"></td>
       <?php else:?>
@@ -112,12 +116,12 @@
       <?php endif;?>
       
     <td><a class="linkk" href="<?php echo base_url()."index.php/buysell/viewAd/".$value->id?>"><?php echo $value->item?></a></td>
-   <td style="color:white;"><?php echo ucwords(strtolower(substr($value->message,0,150)));if(strlen($value->message)>151) echo "..."?></a></td>
-          <td style="color:white;"><a class="linkk" href="<?php echo base_url()."index.php/view/profile/$value->uid"?>"><?php echo $value->username?></a></td>
-      <td style="color:white;"><?php echo date("F j, Y ", strtotime($value->timestamp))?></td>
-    <td style="color:white;"><?php echo "".$value->contactNo?></a></td>
-    <td style="color:white;"><?php echo "".$value->location?></a></td>
-    <td style="color:white;"><?php echo "Rs.".$value->pricerange."/-"?></a></td>
+   <td style="color:black;"><?php echo ucwords(strtolower(substr($value->message,0,150)));if(strlen($value->message)>151) echo "..."?></a></td>
+          <td style="color:black;"><a class="linkk" href="<?php echo base_url()."index.php/view/profile/$value->uid"?>"><?php echo $value->username?></a></td>
+      <td style="color:black;"><?php echo date("F j, Y ", strtotime($value->timestamp))?></td>
+    <td style="color:black;"><?php echo "".$value->contactNo?></a></td>
+    <td style="color:black;"><?php echo "".$value->location?></a></td>
+    <td style="color:black;"><?php echo "Rs.".$value->pricerange."/-"?></a></td>
   </tr>
   <?php endforeach;?>
 </table>

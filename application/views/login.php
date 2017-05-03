@@ -1,25 +1,27 @@
+<title>Red-Eye Photography</title>
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <section class="services">
 <div class="row">
   <div class="six mobile-four columns">
-    <h4 class="h"><span>Login</span></h4>
+    <h4 class="h"><span style="color:black">Login</span></h4>
       <form action='<?php echo base_url()?>index.php/login/loginfunc' method="post"> 
           <div class="row">
     <div class="two mobile-one columns">
-      <label class="right inline">Userame:</label>
+      <label class="right inline" style="color:black">Userame:</label>
     </div>
     <div class="ten mobile-three columns">
-      <input style="background-color:#494949; border-color:#494949;" type="text" placeholder="Username" name="email" class="eight" />
+      <input style="background-color:#EBEDFA;" type="text" placeholder="Username" name="email" class="eight" />
     </div>
   </div>
   <div class="row">
     <div class="two mobile-one columns">
-      <label class="right inline">Password:</label>
+      <label class="right inline" style="color:black">Password:</label>
     </div>
     <div class="ten mobile-three columns">
-      <input style="background-color:#494949; border-color:#494949;" type="Password" name="pass" placeholder="Password" class="eight" />
+      <input style="background-color:#EBEDFA;" type="Password" name="pass" placeholder="Password" class="eight" />
     </div>
   </div><br>
-<a href="<?php echo base_url()?>index.php/login/forgot" style="color:White;margin-left:300px" >Forgot Password</a><br><br><br>
+<a href="<?php echo base_url()?>index.php/login/forgot" style="color:Black;margin-left:300px" >Forgot Password</a><br><br><br>
 <input type="submit" value="Login" style="width:100px" class="push socle"></td>
       <td>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="<?php echo base_url()?>index.php/login/register" style="width:100px;align:center;" class="push socle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td></tr></table></form>

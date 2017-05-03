@@ -1,3 +1,5 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <style>
     
     .portfolio{
@@ -91,6 +93,8 @@
         });
 </script>    
 
+
+<title>Red-Eye Photography</title>
 
 <section class="portfolio recent">
 

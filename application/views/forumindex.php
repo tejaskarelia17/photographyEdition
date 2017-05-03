@@ -1,3 +1,6 @@
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
+
 <?php
 
 /*
@@ -16,6 +19,7 @@
     text-transform:capitalize;
     }
 </style>
+<title>Red-Eye Photography</title>
 <br><br>
 
 
@@ -23,7 +27,7 @@
 <section class="services">
 <ul id="forumList">
     <?php foreach($data as $val):?>
-    <li><a href="<?php echo base_url()."index.php/forum/viewCategory/".($val->name)?>"><h2 style="color:white"><?php echo $val->name?></h2></a></li>
+    <li><a href="<?php echo base_url()."index.php/forum/viewCategory/".($val->name)?>"><h2 style="color:black"><?php echo $val->name?></h2></a></li>
     <?php    endforeach;?>
 </ul>
     <br><br>

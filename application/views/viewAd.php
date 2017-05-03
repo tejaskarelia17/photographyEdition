@@ -1,3 +1,5 @@
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <script>
     $(function(){
         var category=<?php echo $post->category_id?>;
@@ -74,22 +76,23 @@
         font-size: 4em;
     }
 </style>
+<title>Red-Eye Photography</title>
 <section class="services">
   <div class="row2">
   <br><br><br>
-  <h3 style="font-face:Calibri;color:yellow"><span><?php echo ucwords(strtolower($postdata->item))?></span></h3>  
+  <h3 style="font-face:Calibri;color:blue;margin-left:30px"><span><?php echo ucwords(strtolower($postdata->item))?></span></h3>  
   
     <div class="ten columns">
 <br>
-<img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; margin: 0px 10px 0px 0px; border-right-width: 0px" src="/uploads/buysell/<?php echo $postdata->pic_loc?>" border="0" alt="camera"  align="left" /></noscript></a>
+<img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; margin: 0px 10px 0px 30px; border-right-width: 0px" src="/uploads/buysell/<?php echo $postdata->pic_loc?>" border="0" alt="camera"  align="left" /></noscript></a>
 
 <p class="leadwhite">
-<h5 style="color:aqua"> Owner: <span style="color:White"><?php echo ucwords(strtolower($userdata->username))?></span></h5>
-<h5 style="color:Aqua"> IPE Pin: <span style="color:White"><?php echo "ipe".($postdata->uid +3000)?> </span></h5>
-<h5 style="color:Aqua"> Product Description:<span style="color:White"><p class="leadwhite"><?php echo ucfirst(strtolower($postdata->message))?> </span></h5>
-<h5 style="color:Aqua"> Location: <span style="color:White"><?php echo ucwords(strtolower($postdata->location))?> </span></h5>
-<h5 style="color:Aqua"> Price: <span style="color:White"><?php echo "Rs. ".$postdata->pricerange."/-"?></span></h5>
-<h5 style="color:Aqua"> Contact <img src="/images/phone.png" height="20px" width="20px"> <span style="color:White;"><?php echo $postdata->contactNo?> </span></h5>
+<h5 style="color:black"> Owner: <span style="color:Black"><?php echo ucwords(strtolower($userdata->username))?></span></h5>
+<h5 style="color:black"> IPE Pin: <span style="color:Black"><?php echo "ipe".($postdata->uid +3000)?> </span></h5>
+<h5 style="color:black"> Product Description:<span style="color:Black"><p><?php echo ucfirst(strtolower($postdata->message))?> </span></h5>
+<h5 style="color:black"> Location: <span style="color:Black"><?php echo ucwords(strtolower($postdata->location))?> </span></h5>
+<h5 style="color:black"> Price: <span style="color:Black"><?php echo "Rs. ".$postdata->pricerange."/-"?></span></h5>
+<h5 style="color:black"> Contact <img src="/images/phone.png" height="20px" width="20px"> <span style="color:Black;"><?php echo $postdata->contactNo?> </span></h5>
 </p><br>
 
   </div>

@@ -1,3 +1,4 @@
+<title>Red-Eye Photography</title>
 <?php
 
 /*
@@ -25,7 +26,7 @@ class profile extends CI_Controller{
     
     public function view($id){
         
-        redirect('/view/profile/'.$id, 'refresh');
+        redirect('', 'refresh');
         /*
         $details=  $this->IPEModel->getUserData($id);
         //$this->IPEModel->getPicturesForUser($id,16,0);
@@ -183,6 +184,8 @@ class profile extends CI_Controller{
                         $data['email']=$details->email;       
                         $data['bio']=$details->bio;
                         $data['profileImage']=$details->profileImage;
+                        
+                                               
                         $this->template->write_view('content', 'e', $data, TRUE);
                         $this->template->render();		
                 }
@@ -205,6 +208,7 @@ class profile extends CI_Controller{
             
             if(isset($_POST['username'])){
                 $this->IPEModel->addUsername($this->session->userdata('id'),$_POST['username']);
+                $this->session->set_userdata('username',$_POST['username']);
             }
                         $this->IPEModel->addContact($this->session->userdata('id'),$_POST['contact']);
                         $this->IPEModel->addFacebook($this->session->userdata('id'),$_POST['facebook']);

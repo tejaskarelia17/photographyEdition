@@ -1,10 +1,195 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="filling.aspx.cs" Inherits="dentist.filling" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
- <div style="width:800px;margin-left:50px; ">
-            <img src="images/services/filling.jpg" width="150px" height="150px" style=" float:left" />
-            <div style="margin-left:160px;">
-            <h1>teeth filling</h1>
-            <p>
-              To treat a cavity your dentist will remove the decayed portion of the tooth and then "fill" the area on the tooth where the decayed material once lived. Fillings are also used to repair cracked or broken teeth and teeth that have been worn down from misuse (such as from nail-biting or tooth grinding ). What Steps Are Involved in Filling a Tooth? First, the dentist will numb the area around the tooth to be worked on with a local anesthetic. Next, a drill, air abrasion instrument or laser will be used to remove the decayed area. The choice of instrument depends on the individual dentist's comfort level, training, and investment in the particular piece of equipment as well as location and extent of the decay. cavity Next, your dentist will probe or test the area during the decay removal process to determine if all the decay has been removed. Once the decay has been removed, your dentist will prepare the space for the filling by cleaning the cavity of bacteria and debris. If the decay is near the root, your dentist may first put in a liner made of glass ionomer, composite resin, or other material to protect the nerve. Generally, after the filling is in, your dentist will finish and polish it. Several additional steps are required for tooth-colored fillings and are as follows. After your dentist has removed the decay and cleaned the area, the tooth-colored material is applied in layers. Next, a special light that "cures" or hardens each layer is applied. When the multilayering process is completed, your dentist will shape the composite material to the desired result, trim off any excess material and polish the final restoration. What Types of Filling Materials are Available? Today, several dental filling materials are available. Teeth can be filled with gold; porcelain; silver amalgam (which consists of mercury mixed with silver, tin, zinc, and copper); or tooth-colored, plastic and glass materials called composite resin fillings. The location and extent of the decay, cost of filling material, patients' insurance coverage and your dentist's recommendation assist in determining the type of filling that will best address your needs. Cast gold Advantages: Durability - lasts at least 10 to 15 years, usually longer; doesn't corrode Strength - can withstand chewing forces Aesthetics - some patients find gold more pleasing to the eye than silver, amalgam fillings Disadvantages: Expense - more than other materials; up to 10 times higher than cost of amalgam filings Additional office visits - requires at least two office visits to place Galvanic shock - a gold filling placed immediately next to a silver, amalgam filling can cause a sharp pain (galvanic shock) to occur. The interaction between the metals and saliva causes an electric current to occur - it's a rare occurrence, however Aesthetics - most patients don't find any "colored" fillings to be an "eye-pleasing" advantage Silver-fillings (Amalgams) Advantages: Durability - lasts at least 10 to 15 years and usually outlasts composite fillings Strength - can withstand chewing forces Expense - is less expensive than composite fillings Disadvantages: Poor aesthetics - fillings don't match the color of your natural teeth Destruction of more tooth structure - healthy parts of the tooth must often be removed to make a space large enough to hold the amalgam filling Discoloration - amalgam fillings can create a grayish hue to the surrounding tooth structure Cracks and fractures - although all teeth expand and contract in the pr
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 4.3.2 or newer
+ *
+ * @package		CodeIgniter
+ * @author		ExpressionEngine Dev Team
+ * @copyright	Copyright (c) 2006 - 2012 EllisLab, Inc.
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 2.0
+ * @filesource	
+ */
+
+// ------------------------------------------------------------------------
+
+/**
+ * CodeIgniter Memcached Caching Class 
+ *
+ * @package		CodeIgniter
+ * @subpackage	Libraries
+ * @category	Core
+ * @author		ExpressionEngine Dev Team
+ * @link		
+ */
+
+class CI_Cache_file extends CI_Driver {
+
+	protected $_cache_path;
+
+	/**
+	 * Constructor
+	 */
+	public function __construct()
+	{
+		$CI =& get_instance();
+		$CI->load->helper('file');
+		
+		$path = $CI->config->item('cache_path');
+	
+		$this->_cache_path = ($path == '') ? APPPATH.'cache/' : $path;
+	}
+
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Fetch from cache
+	 *
+	 * @param 	mixed		unique key id
+	 * @return 	mixed		data on success/false on failure
+	 */
+	public function get($id)
+	{
+		if ( ! file_exists($this->_cache_path.$id))
+		{
+			return FALSE;
+		}
+		
+		$data = read_file($this->_cache_path.$id);
+		$data = unserialize($data);
+		
+		if (time() >  $data['time'] + $data['ttl'])
+		{
+			unlink($this->_cache_path.$id);
+			return FALSE;
+		}
+		
+		return $data['data'];
+	}
+
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Save into cache
+	 *
+	 * @param 	string		unique key
+	 * @param 	mixed		data to store
+	 * @param 	int			length of time (in seconds) the cache is valid 
+	 *						- Default is 60 seconds
+	 * @return 	boolean		true on success/false on failure
+	 */
+	public function save($id, $data, $ttl = 60)
+	{		
+		$contents = array(
+				'time'		=> time(),
+				'ttl'		=> $ttl,			
+				'data'		=> $data
+			);
+		
+		if (write_file($this->_cache_path.$id, serialize($contents)))
+		{
+			@chmod($this->_cache_path.$id, 0777);
+			return TRUE;			
+		}
+
+		return FALSE;
+	}
+
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Delete from Cache
+	 *
+	 * @param 	mixed		unique identifier of item in cache
+	 * @return 	boolean		true on success/false on failure
+	 */
+	public function delete($id)
+	{
+		return unlink($this->_cache_path.$id);
+	}
+
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Clean the Cache
+	 *
+	 * @return 	boolean		false on failure/true on success
+	 */	
+	public function clean()
+	{
+		return delete_files($this->_cache_path);
+	}
+
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Cache Info
+	 *
+	 * Not supported by file-based caching
+	 *
+	 * @param 	string	user/filehits
+	 * @return 	mixed 	FALSE
+	 */
+	public function cache_info($type = NULL)
+	{
+		return get_dir_file_info($this->_cache_path);
+	}
+
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Get Cache Metadata
+	 *
+	 * @param 	mixed		key to get cache metadata on
+	 * @return 	mixed		FALSE on failure, array on success.
+	 */
+	public function get_metadata($id)
+	{
+		if ( ! file_exists($this->_cache_path.$id))
+		{
+			return FALSE;
+		}
+
+		$data = read_file($this->_cache_path.$id);
+		$data = unserialize($data);
+
+		if (is_array($data))
+		{
+			$mtime = filemtime($this->_cache_path.$id);
+
+			if ( ! isset($data['ttl']))
+			{
+				return FALSE;
+			}
+
+			return array(
+				'expire'	=> $mtime + $data['ttl'],
+				'mtime'		=> $mtime
+			);
+		}
+
+		return FALSE;
+	}
+
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Is supported
+	 *
+	 * In the file driver, check to see that the cache directory is indeed writable
+	 * 
+	 * @return boolean
+	 */
+	public function is_supported()
+	{
+		return is_really_writable($this->_cache_path);
+	}
+
+	// ------------------------------------------------------------------------
+}
+// End Class
+
+/* End of file Cache_file.php */
+/* Location: ./system/libraries/Cache/drivers/Cache_file.php */

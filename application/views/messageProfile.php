@@ -1,3 +1,5 @@
+<title>Red-Eye Photography</title>
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
 <h1 align="center" style="padding-top:15px">Messages<br />
     <img src="<?php echo base_url()?>images/highlight.png" /></h1>
 <table style="margin: auto;" border="0" cellspacing="0" cellpadding="2">
