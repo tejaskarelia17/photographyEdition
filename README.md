@@ -23,9 +23,10 @@ This Project is built on LAMP stack
 * [jQuery] - Animations, etc..
 * [JavaScript] - Validations
 
-## Technologies
+## Requirements
 * Local Server such as XAMPP Server, WAMP, MAMP, etc..
 * MySQL
+* ImageMagick
 * Modern Web Browser such as Chrome, Mozilla, Safari, Opera, etc.
 
 **This Repo contains many missing images. I will update the repo soon to solve all the issues.**
